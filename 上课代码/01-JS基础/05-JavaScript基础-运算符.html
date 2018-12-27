@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script type="text/html">
+    // var res = 100 + 200;
+    // console.log(res); // 300
+
+    /*var num1 = 100;
+    var num2 = 200;
+    var res = num1 + num2;
+    console.log(res);*/
+
+    // 1.非Number类型的值进行运算时，会将这些值转换为Number然后在运算
+    /*var res = true + 100;
+    // console.log(res); // 101
+
+    var res1 = true + false;
+    // console.log(res1);
+
+    var res2 = null + 10;
+    console.log(res2);*/
+
+    // 2. 任何值和NaN做运算都得NaN
+    /*var res = 100 + NaN;
+    console.log(res); // NaN*/
+
+    // 3. 任何的值和字符串做加法运算，都会先转换为字符串，然后再和字符串做拼串的操作
+    var res = 100 + '123';
+    console.log(res); // 100123
+
+    var res1 = 100 + 'false';
+    console.log(res1);
+</script>
+<script type="text/html">
+    var res = 100 - 120;
+    // console.log(res);
+
+    // 字符串做减法也会转换为Number
+    var res1 = 100 - '123';
+    console.log(res1);
+</script>
+<script type="text/html">
+    var res = 100 * 123;
+    console.log(res);
+</script>
+<script type="text/html">
+    var res = 100 / 0;
+    console.log(res);
+</script>
+<script type="text/html">
+    // 格式: Number1 % Number2
+    /*var res = 10 % 3;
+    console.log(res);
+
+    var res1 = 10 % 2.5;
+    console.log(res1);*/
+
+    // 1. n等于0 返回NaN
+    var res = 100 % 0;
+    // console.log(res);
+
+    // 2. m等于0 结果为0
+    var res1 = 0 % 19;
+    // console.log(res1);
+
+    // 3. m>n 正常求余 如:8%3 = 2
+    var res2 = 100 % 19;
+    // console.log(res2);
+
+    // 4. m<n 结果是m 如:2%4 = 2
+    var res3 = 10 % 19;
+    console.log(res3);
+</script>
+<script type="text/html">
+    /*var num = -100;
+    num = -num;
+    console.log(num);*/
+
+    /*var bool = true;
+    var res = -bool;
+    console.log(res);*/
+
+    /*var str = '1234abc';
+    var res = +str;
+    console.log(res);*/
+
+    var str = null;
+    var res = +str;
+    console.log(res);
+</script>
+<script type="text/html">
+    /*var num = 100;
+    var value = num;
+    num = 90;
+    console.log(num);
+    console.log(value);*/
+
+    100 = 200;
+
+    100 = num;
+
+    var num = 100;
+</script>
+<script type="text/html">
+    /*var a = 100;
+    a -= 10;  // a = a + 10;
+    console.log(a); // 110*/
+
+
+    var a = 100;
+    a *= 100 + 30; // a = a * (100 + 30)
+    console.log(a);
+</script>
+<script type="text/html">
+  /*
+    var i = 10;
+    i += 1;  // i++  ++i
+    i -= 1;  // i--  --i
+    */
+
+  // 1.无论运算符号在前还是在后, 变量在自身基础上都会改变
+    /*var i = 100;
+    // i++;
+    // ++i;
+    //  i--;
+    // --i;
+    console.log(i);  // 101*/
+
+    // 2. 后缀表达式:x++, x--; 先用x的当前值作为表达式的值,再进行自增自减1运算。即“先用 后变”,也就是先用变量的值参与运算,变量的值再进行自增自减变化。
+    /*var num1 = 20, num2 = 30;
+    var res = (num1++) + (num2++);
+    console.log(res); // 50
+    console.log(num1); // 21
+    console.log(num2); // 31*/
+
+    // 3. 前缀表达式:++x, --x; 其中x表示变量名,先完成变量的自增自减1运算,再用x的值作为表 达式的值;即“先变后用”,也就是变量的值先变,再用变量的值参与运算。
+      var num1 = 20, num2 = 30;
+      var res = (--num1) + (--num2);
+      console.log(res); // 48
+      console.log(num1); // 19
+      console.log(num2); // 29
+</script>
+<script type="text/html">
+    /*var a = 100, b = 100;
+    console.log(a < b); //  false
+    console.log(a > b); //  false
+    console.log(a <= b); // true
+    console.log(a >= b); // true
+    console.log(a == b); // true
+    console.log(a != b); // false
+    console.log(a === b); // true
+    console.log(a !== b); // false*/
+
+    // 1. 对于非数值进行比较时，会将其转换为数字然后在比较
+    /*console.log(1 > false); // true
+    console.log(1 >= true); // true
+    console.log(1 >= 'it10'); // true
+    console.log(1 > null); // true*/
+
+    // 2. 如果符号两侧的值都是字符串时，不会将其转换为数字进行比较, 而会分别比较字符串中字符的Unicode编码
+    // console.log( 'a'< 'b'); // true
+
+    // 3. null、undefined 、NaN比较
+    /*console.log(null == null);
+    console.log(undefined == undefined);
+    console.log(NaN == NaN); // false*/
+
+    // isNaN();
+   /* var num = NaN;
+    console.log(isNaN(num)); // false*/
+
+    /*console.log(null == undefined); // true
+    console.log(null === undefined); // false*/
+
+
+    console.log(123 == '123');  // true
+    console.log(123 === '123');  // false
+</script>
+<script type="text/html">
+    /*var result = (10 > 9) && (7 > 100);
+    console.log(result); // false
+
+    result = true && true;
+    result = true && false;
+    result = false && true;*/
+
+    // 短路写法
+    // (7 > 3) && alert('我是哈哈哈哈');
+    // true && alert('我是哈哈哈哈');
+    // false && alert('我是哈哈哈哈');
+
+    // 注意事项
+    // 1. 对于非Boolean类型的数值, 逻辑与会自动将其转换为Boolean类型来判断
+    // 2. 如果条件A不成立, 则返回条件A的数值本身
+    // 3. 如果条件A成立, 不管条件B成不成立都返回条件B数值本身
+    // var result = 123 && 'abc';
+    // var result = 123 && 0;
+    var result = null && 0;
+    console.log(result);
+</script>
+<script type="text/html">
+    /*var result = (13 > 7) || (4 > 10);
+    console.log(result); // true*/
+
+    // 短路测试
+    // (7 < 3) || alert('我来了!');
+    //  (17 > 3) || alert('我来了!');
+
+    // var result = 123 || 'abc';
+    var result = null || 0;
+    console.log(result);
+</script>
+<script type="text/html">
+    /*var result = !(3 >1);
+    console.log(result);*/
+
+    // 1.对一个值进行两次取反，它不会变化
+    /*var res = !!100;
+     console.log(res);*/
+
+    var res = !(4 > 2);
+    console.log(res);
+</script>
+<script type="text/html">
+    /*var num1, num2, num3, num4;
+    var result = (num1 = 2 + 3, num2 = 3 * 5, num3 = 4 /7, num4 = 3 + 5);
+    console.log(result);
+
+    function sum(num1, num2) {
+
+    }*/
+
+    var a, b;
+    b = (a=3, --a, a * 5);
+    console.log(b);
+</script>
+<script type="text/html">
+    // 17 > 9 ? alert('对的') : alert('错的');
+
+    // 弹第二个
+    // null?alert("语句1") : alert("语句2");
+    // 弹第一个
+    "abc"?alert("语句1") : alert("语句2");
+</script>
+<script>
+    // 用户从键盘输入3个整数, 找到最大值并输出?
+
+    // 1.定义3个变量, 接收用户输入的值
+    var num1, num2, num3, max;
+
+    // 2.利用prompt()接收用户输入的值
+    num1 = Number(prompt('请输入第一个数:'));
+    num2 = +(prompt('请输入第二个数:'));
+    num3 = +(prompt('请输入第三个数:'));
+
+    // 3. 定义变量保存最大值
+    // var max;
+
+    // 4. 利用三目运算符进行两两比较
+    /*max = num1 > num2 ? num1 : num2;
+    max = max > num3 ? max : num3;*/
+    // 不推荐
+    max = (num1 > num2 ? num1 : num2) > num3 ? (num1 > num2 ? num1 : num2) : num3;
+
+    // 5. 输出结果
+    alert(max);
+</script>
+</body>
+</html>

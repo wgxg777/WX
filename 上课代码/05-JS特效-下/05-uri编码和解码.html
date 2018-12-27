@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "http://www.itmoma.com?name=yann";
+    var str1 ="http://localhost:63342/%E4%B8%8A%E8%AF%BE%E4%BB%A3%E7%A0%81/05-JS%E7%89%B9%E6%95%88-%E4%B8%8B/05-uri%E7%BC%96%E7%A0%81%E5%92%8C%E8%A7%A3%E7%A0%81.html?_ijt=h8d2tjqjlprces058v6s86p9ji";
+
+    // 1. 编码
+    var encodestr = encodeURIComponent(str);
+    console.log(encodestr); // http%3A%2F%2Fwww.itmoma.com%3Fname%3Dyann
+
+    // 2. 解码
+    var decodeStr = decodeURIComponent(str1);
+    console.log(decodeStr);
+
+
+    console.log(decodeURIComponent("https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=%E5%93%88%E5%93%88%E5%93%88&rsv_pq=bcd9c87700072f06&rsv_t=dc09UzZ2JpOa7o%2FDZ969ycvMaFxlARDd1LWKS%2FNnWeCCtroOis%2BJrD3%2B3qk&rqlang=cn&rsv_enter=0&rsv_sug3=5&rsv_sug1=4&rsv_sug7=100&inputT=3148&rsv_sug4=3473"));
+
+
+    var PI = 3.1436592653;
+    console.log(PI.toFixed(3));
+    // 保留两位小数    后面小数会四舍五入
+</script>
+</body>
+</html>

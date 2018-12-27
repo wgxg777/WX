@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <button>按钮6</button>
+
+<script>
+    window.onload = function () {
+        // 1. 获取所有的按钮
+        var btns = document.querySelectorAll('button');
+        
+        // 2. 遍历
+        for(var i=0; i<btns.length; i++){ // 同步
+
+            (function (i) {
+                btns[i].onclick = function () {
+                    alert("你点击了第" + i + "个按钮");
+                }
+            })(i);
+        }
+    }
+</script>
+</body>
+</html>

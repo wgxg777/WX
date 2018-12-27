@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/html">
+    /*
+     1.所有的全局变量都是window的属性;
+     2.所有的全局函数都是window的方法;
+    */
+
+     var str = "张三";
+    console.log(str);
+    console.log(window.str);
+
+    function func() {
+        var age = 19;
+        console.log(111);
+    }
+
+    func();
+    window.func();
+
+    console.log(window.age);
+</script>
+<script type="text/html">
+    console.log(1111);
+    console.log(222);
+    // 动态跳转
+    window.location.href = "http://www.baidu.com";
+    console.log(3333);
+    console.log(444);
+    console.log(555);
+</script>
+<script>
+    console.log(document);
+    console.log(document.childNodes);
+    console.log(document.head);
+    console.log(document.body);
+    document.title = "测试";
+    console.log(document.title);
+</script>
+</body>
+</html>

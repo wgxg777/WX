@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /*// 1. 简单(基本)数据类型
+    var name = "张三";
+    var age = 18;
+
+    // 2. 复杂(引用)数据类型
+    var arr = ["张三", "李四"];*/
+
+   /*
+    var name = "张三";
+    var newName = name;
+
+    name = "李四";
+
+    console.log(name);
+    console.log(newName);
+    */
+
+   var obj = {name: "张三", age: 18};
+   var newObj = obj;
+
+    obj.name = "李四";
+    newObj.age = 100;
+
+   console.log(obj);
+   console.log(newObj);
+</script>
+</body>
+</html>

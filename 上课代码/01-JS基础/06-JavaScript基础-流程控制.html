@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            border: 1px solid skyblue;
+            padding: 5px;
+            display: inline-block;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/html">
+    var age = 8;
+
+    // 判断
+    if(age > 10){
+    console.log(age);
+    }
+
+    // 继续
+    console.log('0000000');
+
+</script>
+<script type="text/html">
+    var age = 12;
+    if(age > 18){
+    console.log('可以上网吧');
+    }else {
+    console.log('未成年,回家吃饭');
+    }
+</script>
+<script type="text/html">
+    var age = 40;
+    if(age > 18){
+    console.log('成年人');
+    }else if(age > 25){
+    console.log('中年人');
+    }else if(age > 50){
+    console.log('老年人');
+    }else {
+    console.log('未成年');
+    }
+</script>
+<script type="text/html">
+    //  var age = 8;
+    /*if(age > 10){
+    console.log(age);
+    }*/
+
+    // if(age > 10)  console.log(age); console.log('哈哈哈哈');
+
+
+    if(3 < 2);{
+    console.log('3 > 2');
+    }
+
+
+</script>
+<script type="text/html">
+    if(0)
+    if(1)
+    console.log('A');
+    else
+    console.log('B');
+    else
+    if(1)
+    console.log('C');
+    else
+    console.log('D');
+</script>
+<script type="text/html">
+    if(100){
+    console.log('6666');
+    }
+</script>
+<script type="text/html">
+    var age = 100;
+    /*if(8 < age){
+    console.log(age);
+    }*/
+    if(10 > age){
+    console.log('相等');
+    }
+</script>
+<script type="text/html">
+    var age = 10;
+    if(age > 5){
+    if(age < 20){
+    console.log(age);
+    }
+    }
+</script>
+<script type="text/html">
+    // 从键盘输入一个整数，判断其是否是偶数，如果是偶数就输出YES，否则输出NO
+
+    // 1. 定义一个变量
+    var temp;
+
+    // 2. 接收用户输入的整数
+    // 2.1 把字符串转成数值
+    temp = +(window.prompt("请输入一个整数"));
+
+    // 3. 合法性验证
+    if (isNaN(temp)) {
+    alert("输入的内容有误!");
+    } else {
+    // 4. 判断用户输入的整数是否是偶数
+    /*if(temp % 2 === 0){
+    alert("YES");
+    }else {
+    alert("NO");
+    }*/
+    (temp % 2 === 0) ? alert("YES") : alert("NO")
+    }
+
+
+</script>
+<script type="text/html">
+    // 接收用户输入的1～7的整数，根据用户输入的整数，输出对应的星期几
+    // 1. 定义变量接收输入的数据
+    var day;
+
+    // 2. 接收输入的数据
+    day = +(window.prompt("请输入1-7之间的整数"));
+
+    // 3. 判断是星期几
+    if(day === 1){
+    console.log("星期一");
+    }else if(day === 2){
+    console.log("星期二");
+    }else if(day === 3){
+    console.log("星期三");
+    }else if(day === 4){
+    console.log("星期四");
+    }else if(day === 5){
+    console.log("星期五");
+    }else if(day === 6){
+    console.log("星期六");
+    }else {
+    console.log("未知日");
+    }
+</script>
+<script type="text/html">
+    // 接收用户输入的一个整数month代表月份，根据月份输出对应的季节
+    // 1. 定义变量
+    var month;
+
+    // 2. 接收输入的内容
+    month = +(window.prompt("请输入一个1-12的月份"));
+
+    // 3. 验证数据
+    if(isNaN(month)){
+    alert("输入的内容不正确!");
+    }else {
+    // 4.判断月份并输出
+    // 12 1 2 冬季  3-5 春季 6-8 夏季 9-11 秋季
+    if(month >= 3 && month <= 5){ // 春季
+    alert("春季");
+    }else if(month >= 6 && month <= 8){ // 夏季
+    alert("夏季");
+    }else if(month >= 9 && month <= 11){ // 秋季
+    alert("秋季");
+    }else if(month === 12 || month === 1 || month === 2){
+    alert("冬季");
+    }else {
+    alert("未知季节");
+    }
+    }
+</script>
+<script type="text/html">
+    // 从键盘输入2个整数，判断大小后输出较大的那个数
+    // 1. 定义变量
+    var num1, num2;
+
+    // 2. 接收用户输入的数据
+    num1 = +(window.prompt("请输入第一个数"));
+    num2 = +(window.prompt("请输入第二个数"));
+
+    // 3. 两两比较
+    /* if(num1 > num2){
+    console.log(num1)
+    }else {
+    console.log(num2);
+    }*/
+    console.log(num1 > num2 ? num1 : num2);
+
+    /*
+    三目运算符:
+    好处: 简化if-else的代码
+    弊端: 必须有一个确定的结果
+
+    简单的用三目, 复杂的用if
+    */
+</script>
+<script type="text/html">
+    // 从键盘输入3个整数，排序后输出
+
+    // 1. 定义变量
+    var a, b, c;
+
+    // 2. 接收用户输入的数据
+    a = +(window.prompt("请输入第一个数"));
+    b = +(window.prompt("请输入第二个数"));
+    c = +(window.prompt("请输入第三个数"));
+
+    // 3. 比较
+    if(a >= b && b >= c){
+    console.log(a, b, c);
+    }else if(a >= c && c >= b){
+    console.log(a, c, b);
+    }else if(b >= a && a >= c){
+    console.log(b, a, c);
+    }else if(b >= c && c >= a){
+    console.log(b, c, a);
+    }else if(c >= a && a >= b){
+    console.log(c, a, b);
+    }else if(c >= b && b >= a){
+    console.log(c, b, a);
+    }
+</script>
+<script type="text/html">
+    // 1. 定义变量
+    var a, b, c;
+
+    // 2. 接收用户输入的数据
+    a = +(window.prompt("请输入第一个数"));
+    b = +(window.prompt("请输入第二个数"));
+    c = +(window.prompt("请输入第三个数"));
+
+    // 3. 选择排序
+    var temp;
+    if(a > b){
+    temp = a;
+    a = b;
+    b = temp;
+    }
+
+    if(a > c){
+    temp = a;
+    a = c;
+    c = temp;
+    }
+
+    if(b > c){
+    temp = b;
+    b = c;
+    c = temp;
+    }
+    console.log(a, b, c);
+</script>
+<script type="text/html">
+    // 1. 定义变量
+    var a, b, c;
+
+    // 2. 接收用户输入的数据
+    a = +(window.prompt("请输入第一个数"));
+    b = +(window.prompt("请输入第二个数"));
+    c = +(window.prompt("请输入第三个数"));
+
+    // 3. 冒泡排序
+    var temp;
+    if(a > b){
+    temp = a;
+    a = b;
+    b = temp;
+    }
+
+    if(b > c){
+    temp = b;
+    b = c;
+    c = temp;
+    }
+
+    if(a > b){
+    temp = a;
+    a = b;
+    b = temp;
+    }
+    console.log(a, b, c);
+</script>
+<script type="text/html">
+    // 石头剪子布的实现
+    // 0-剪刀 1-石头 2-布
+
+    // 1. 定义变量 玩家和电脑
+    var player, computer;
+
+    // 2. 电脑出拳
+    computer = Math.floor( Math.random() * 3);
+    // console.log(computer);
+
+    // 3. 玩家出拳
+    player = +(window.prompt("请出拳: 0.剪刀 1.石头 2.布"));
+
+    // 4. 判断比较
+    if(player < 0 || player > 2){
+    window.prompt("请重新出拳: 0.剪刀 1.石头 2.布");
+    }else {
+    if (
+    player === 0 && computer === 2 ||
+    player === 1 && computer === 0 ||
+    player === 2 && computer === 1
+    ) {
+    alert("恭喜您,赢了!");
+    } else if (
+    computer === 0 && player === 2 ||
+    computer === 1 && player === 0 ||
+    computer === 2 && player === 1
+    ) {
+    alert("很遗憾,你输了!");
+    } else {
+    alert("平局!")
+    }
+    }
+</script>
+<script type="text/html">
+    var num = 10;
+    switch (num){
+    case 0: // 10 === 0  10 == 0
+    console.log("零");
+    break;
+    case 1:
+    console.log("壹");
+    break;
+    case 2:
+    console.log("贰");
+    break;
+    case 3:
+    console.log("叁");
+    break;
+    default:
+    console.log("其他数字");
+    break;
+    }
+</script>
+<script type="text/html">
+    var str = "123";
+    switch (str){
+    case 123:
+    console.log("123数字");
+    break;
+    case "123":
+    console.log("123字符串");
+    break;
+    default:
+    console.log("其他");
+    break;
+    }
+</script>
+<script type="text/html">
+    var str = 123;
+    var num = 123;
+    var str1 = "123";
+    switch (str){
+    case num:
+    console.log("123数字");
+    break;
+    case str1:
+    console.log("123字符串");
+    break;
+    default:
+    console.log("其他");
+    break;
+    }
+</script>
+<script type="text/html">
+    switch (100 + 10){
+    case 101:
+    console.log("101");
+    break;
+    case 10:
+    console.log("10");
+    break;
+    case 10 + 100:
+    console.log("10 + 100");
+    break;
+    default:
+    console.log("other");
+    break;
+    }
+</script>
+<script type="text/html">
+    var num = 2;
+    switch (num){
+    case 0: // 10 === 0  10 == 0
+    console.log("零");
+    case 1:
+    console.log("壹");
+    case 2:
+    console.log("贰");
+    case 3:
+    console.log("叁");
+    default:
+    console.log("其他数字");
+    }
+</script>
+<script type="text/html">
+    switch (100 + 1){
+    case 101:
+    console.log("101");
+    console.log("1111");
+    break;
+    default:
+    console.log("other");
+    break;
+    case 10:
+    console.log("10");
+    break;
+    case 10 + 100:
+    console.log("10 + 100");
+    break;
+    }
+</script>
+<script type="text/html">
+    /*
+    要求用户输入一个分数，根据输入的分数输出对应的等级
+    A 90～100   10 9
+    B 80～89    8
+    C 70～79    7
+    D 60～69    6
+    E 0～59     5,4,3,2,1,0
+    */
+    // 100 / 10 = 10  99 / 10 = 9.9   91 / 10 = 9.1   71 / 10 = 7.1
+
+    // 1.if
+    /*
+
+    // 1.1 定义变量,存放分数
+    var score;
+
+    // 1.2 提示用户输入分数
+    score = +(window.prompt("请输入0~100之间的分数\n"));
+
+    // 1.3 根据分数判断等级
+    if(score >= 90 && score <= 100){
+    alert("A");
+    }else if(score >= 80 && score <= 89){
+    alert("B");
+    }else if(score >= 70 && score <= 79){
+    alert("C");
+    }else if(score >= 60 && score <= 69){
+    alert("D");
+    }else if(score >= 0 && score <= 59){
+    alert("B");
+    }else {
+    alert("分数在0-100之间!");
+    }
+    */
+
+    // 2. switch
+    // 2.1 定义变量,存放分数
+    var score;
+
+    // 2.2 提示用户输入分数
+    score = +(window.prompt("请输入0~100之间的分数\n"));
+
+    // 2.3 等级
+    var level = Math.floor(score / 10);
+    switch (level){
+    case 10:
+    case 9:
+    alert("A");
+    break;
+    case 8:
+    alert("B");
+    break;
+    case 7:
+    alert("C");
+    break;
+    case 6:
+    alert("D");
+    break;
+    default:
+    alert("E");
+    break;
+    }
+</script>
+<script type="text/html">
+    // 判断用户输入的数是否大于100
+
+    var score;
+    score = +(window.prompt("请输入一个数"));
+    if(score > 100){
+    console.log("大于");
+    }
+
+    switch (score){
+    case 101:
+    case 102:
+    case 103:
+    case 104:
+    case 105:
+    case 106:
+    case 107:
+    case 108:
+    }
+</script>
+<script type="text/html">
+    // 从键盘输入一个月份,输出对应季节 12~2 冬季 3~5 春季 6~ 8 夏季 9~11 秋季(用switch)
+
+    // 1. 定义变量
+    var month;
+
+    // 2. 接收数据
+    month = +(window.prompt("请输入一个1-12的月份"));
+
+    // 3. 数据安全校验
+    if(isNaN(month)){
+    alert("输入有误");
+    }else {
+    // 4. 判断输出
+    switch (month){
+    case 1:
+    case 2:
+    case 12:
+    alert("冬季");
+    break;
+    case 3:
+    case 4:
+    case 5:
+    alert("春季");
+    break;
+    case 6:
+    case 7:
+    case 8:
+    alert("夏季");
+    break;
+    case 9:
+    case 10:
+    case 11:
+    alert("秋季");
+    break;
+    default:
+    alert("未知季节");
+    break;
+    }
+    }
+
+</script>
+<script type="text/html">
+    // 1. 定义变量
+    var num1, num2, op, result;
+
+    // 2. 接收用户的输入
+    num1 = +(window.prompt("请输入第一个运算的数"));
+    op = window.prompt("请输入运算符: + - * /");
+    num2 = +(window.prompt("请输入第二个运算的数"));
+
+    // 3.根据用户的输入输出结果
+    switch (op){
+    case "+":
+    result = num1 + num2;
+    break;
+    case "-":
+    result = num1 - num2;
+    break;
+    case "*":
+    result = num1 * num2;
+    break;
+    case "/":
+    result = num1 / num2;
+    break;
+    default:
+    alert("更多功能请使用付费版本!");
+    break;
+    }
+
+    // 4. 输出结果
+    alert("计算的结果是:" + result);
+</script>
+<script type="text/html">
+    var num = 100;
+    while (num < 100){
+    console.log("你好帅!\n");
+    num++;
+    }
+</script>
+<script type="text/html">
+    // 注意点1: 死循环
+    /*while (10){
+    console.log("哈哈哈哈");
+    }*/
+
+    while (1);
+</script>
+<script type="text/html">
+    // 提示用户输入一个正整数n， 计算1 + 2 + 3 + ...n的和
+    /*
+    1+..+5
+    1 + 2 + 3 + 4 + 5  = 15
+    (0 + 1) 1 + 2
+    (1 + 2) 3 + 3
+    (1 + 2 + 3) 6 + 4
+    (1 + 2 + 3 + 3) 10 + 5
+    */
+
+    // 1. 定义变量, 记录所有的值
+    var sum = 0, total;
+
+    // 2. 提示用户输入
+    total = +(window.prompt("请输入一个正整数"));
+
+    if(total > 0){
+    // 3. 定义变量保存的递增数
+    var number = 1;
+    while (number <= total){
+    console.log("sum =" + sum + ", number =" + number);
+    sum = sum + number;
+    number++;
+    }
+    console.log(sum);
+    }
+</script>
+<script type="text/html">
+    // 获取1～100之间 7的倍数的个数并打印，并统计个数
+    var count = 1;
+    var num = 0;
+    while (count <= 100){
+    // 判断
+    if(count % 7 === 0){
+    console.log("count = " + count);
+    num ++; // 计数器
+    }
+    // 数量++
+    count++;
+    }
+    console.log("num = " + num);
+</script>
+<script type="text/html">
+    /* var num = 0;
+    while (true){
+    console.log(num);
+    if(10 === num){
+    break; // 当num = 10的时候跳出循环
+    }
+    num ++;
+    }*/
+
+    // break;
+    //  alert(0);
+
+    /*while (1) {
+    while (2) {
+    console.log("我是while2"); // 会被输出多次
+    break; // 跳出while2,但是不会跳出while1
+    }
+    console.log("我是while1");
+    }*/
+
+    var num = 0;
+    while (true){
+    console.log(num);
+    if(10 === num){
+    break; // 当num = 10的时候跳出循环
+    console.log("我有机会被执行吗?");
+    }
+    num ++;
+    }
+</script>
+<script type="text/html">
+    // 求0-10之间的奇数
+
+    var num = 0;
+    while (num < 10){
+    num++;
+    if(num % 2 === 0){ // 偶数
+    continue; // 结束本次循环,进入下一次循环
+    }
+    console.log(num);
+    }
+</script>
+<script type="text/html">
+    var num = 20;
+    do{
+    console.log(num); // 输出一次10
+    }while (num < 10);
+</script>
+<script type="text/html">
+    // i 增量
+    for(var i = 0; i < 10; i++){
+    console.log(i);
+    }
+
+    // num 增量
+    var num = 0;
+    while (num < 10){
+    console.log(num);
+    num++;
+    }
+
+    // 死循环
+    for(;;){}
+    while(1){}
+
+
+</script>
+<script type="text/html">
+    // 打印好友列表
+    /*
+    好友列表1
+    好友1
+    好友2
+    好友3
+    好友列表2
+    好友1
+    好友2
+    好友3
+    */
+
+    for (var i = 1; i <= 5; i++) {
+    console.log("好友列表" + i);
+    for(var j = 1; j <= 10; j++){
+    console.log("   好友" + j);
+    }
+    }
+</script>
+<script type="text/html">
+    /*
+    需求: 在界面上绘制如下图形
+    ****
+    ****
+    ****
+    */
+
+    //  1.外循环控制行数
+    for(var i=0; i< 3; i++){
+    // 2. 内循环控制列数
+    for(var j=0; j<4; j++){
+    window.document.write("*");
+    console.log("(" + i + "," + j + ")");
+    }
+    window.document.write("<br/>");
+    }
+
+
+</script>
+<script type="text/html">
+    /*
+    需求: 在界面上绘制如下图形
+    *
+    **
+    ***
+    ****
+    *****
+    */
+
+    for (var i = 0; i < 15; i++) {
+    for(var j = 0; j<=i; j++){
+    window.document.write("*\t");
+    }
+    window.document.write("<br/>");
+    }
+</script>
+<script type="text/html">
+    for (var i = 0; i < 5; i++) {
+    for(var j = i; j< 5; j++){
+    window.document.write("*\t");
+    }
+    window.document.write("<br/>");
+    }
+</script>
+<script type="text/html">
+    /*
+    1
+    12
+    123
+    */
+    for (var i = 0; i < 10; i++) {
+    for (var j = 0; j <= i; j++) {
+    window.document.write(j + 1 + " ");
+    }
+    window.document.write("<br/>");
+    }
+</script>
+<script type="text/html">
+    /*
+     -----*
+     ----***
+     ---*****
+     --*******
+     -*********
+     ***********
+     */
+
+    for (var i = 0; i <= 5; i++) {
+        for (var j = 0; j < 5 - i; j++) {
+            window.document.write("-");
+        }
+        for (var m = 0; m < 2 * i + 1; m++) {
+            window.document.write("*");
+        }
+        window.document.write("<br/>");
+    }
+</script>
+<script>
+    for(var i = 1; i<=9; i++){
+        for(var j=1; j<=i; j++){
+            document.write("<span>" + j + "*" + i + "=" + i*j + "</span>");
+        }
+        window.document.write("<br/>");
+    }
+</script>
+</body>
+</html>

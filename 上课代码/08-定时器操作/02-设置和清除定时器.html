@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn1">开启定时器</button>
+<button id="btn2">结束定时器</button>
+
+<script>
+    window.onload = function () {
+        // 1.获取需要的标签
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+
+        var height = 150, timer = null;
+
+        // 2. 开启定时器
+        btn1.onclick = function () {
+             // 2.1 设置定时器
+            timer = setInterval(function () {
+                height += 1;
+                console.log("身高是" + height + "cm");
+            }, 1000);
+        };
+
+        // 3. 结束定时器
+        btn2.onclick = function () {
+            console.log(timer);
+            clearInterval(timer);
+        }
+    }
+</script>
+</body>
+</html>

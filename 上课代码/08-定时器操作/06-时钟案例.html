@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box{
+            width: 600px;
+            height: 600px;
+            background: url("images/clock.jpg") no-repeat;
+            margin: 10px auto;
+
+            position: relative;
+        }
+
+        #hour, #min, #second{
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 30px;
+            height: 600px;
+            margin-left: -15px;
+        }
+
+        #hour{
+            background: url("images/hour.png") no-repeat center center;
+        }
+
+        #min{
+            background: url("images/minute.png") no-repeat center center;
+        }
+
+        #second{
+            background: url("images/second.png") no-repeat center center;
+        }
+    </style>
+</head>
+<body>
+   <div id="box">
+       <div id="hour"></div>
+       <div id="min"></div>
+       <div id="second"></div>
+   </div>
+
+<script>
+    window.onload = function () {
+        // 1. 获取需要的标签
+        var hour = document.getElementById("hour");
+        var min = document.getElementById("min");
+        var second = document.getElementById("second");
+
+        // 2.开启定时器
+        setInterval(function () {
+             // 2.1 获取当前的时间戳
+            var date = new Date();
+
+             // 2.2 求出总毫秒数
+            var millS = date.getMilliseconds();
+            var s = date.getSeconds() + millS / 1000;
+            var m = date.getMinutes() + s / 60;
+            var h = date.getHours() % 12 + m / 60;
+
+            // console.log(s);
+            // console.log(m);
+            // console.log(h);
+
+            // 2.3 旋转
+            hour.style.transform = 'rotate('+ h * 30 +'deg)';
+            min.style.transform = 'rotate('+ m * 6 +'deg)';
+            second.style.transform = 'rotate('+ s * 6 +'deg)';
+        }, 10);
+    }
+</script>
+</body>
+</html>

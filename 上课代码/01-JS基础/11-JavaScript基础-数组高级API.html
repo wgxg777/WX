@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. sort
+    /*var arr = [100, 10, 8, -10, 1000];
+    console.log(arr);
+
+    console.log(arr.sort(function (a, b) {
+        return a - b;
+    }));
+
+    console.log(arr.sort(function (a, b) {
+        return b - a;
+    }));*/
+
+    // 2. slice()
+    /*var arr = [1, 3, 5, 7, 9, 11];
+    var arr1 = arr.slice(1);
+    var arr2 = arr.slice(1, 4);
+    var arr3 = arr.slice(1, -2);
+    var arr4 = arr.slice(-4, -1);
+    console.log(arr1);
+    console.log(arr2);
+    console.log(arr3);
+    console.log(arr4);*/
+
+    // 3.splice()
+    // var arr = [1, 3, 5, 7, 9, 11];
+    /*var removeArr = arr.splice(0, 3);
+    console.log(arr);
+    console.log(removeArr);*/
+
+    /*arr.splice(2,0, "哈哈哈", "哈哈哈", "测试");
+    console.log(arr);*/
+
+    // arr = [];
+    // arr.splice(0, 1);
+    // console.log(arr);
+
+    // 4. forEach
+    /*var arr = [1, 3, 5, 7, 9, 11, "哈哈哈"];
+    arr.forEach(function (value, index) {
+        console.log(index + ":" + value);
+    });*/
+
+    // 5. map()
+   /* var arr = [1, 3, 5, 7, 9, 11];
+    var arr2 = arr.map(function (value, index) {
+        return value * value + 10;
+    });
+    console.log(arr2);*/
+
+   // 6. filter()
+    /*var arr = [1, 2, 3, 4, 5, 6,  7, 8, 9, 10, 11];
+    var arr2 = arr.filter(function (value, index) {
+        return index % 2 === 0 || value > 9;
+    });
+    console.log(arr2);*/
+
+    // 7. every()
+   /* var arr = [11, 2, 3, 4, 15];
+    var result =  arr.every(function (value, index) {
+        return value < 10;
+    });
+    console.log(result);*/
+
+   // 8. some()
+    var arr = [11, 21, 31, 14, 15];
+    var result =  arr.some(function (value, index) {
+        return value < 10;
+    });
+    console.log(result);
+</script>
+</body>
+</html>

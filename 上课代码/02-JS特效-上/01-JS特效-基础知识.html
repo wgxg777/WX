@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/html">
+        window.onload = function () {
+        var btn = document.getElementById("btn");
+        console.log(btn);
+        btn.onclick = deal;
+        function deal() {
+        alert("点我干啥?");
+        }
+        }
+    </script>
+</head>
+<body>
+<!--<div class="my-btn">212121</div>
+<button name="btn" id="btn" class="my-btn">点我</button>-->
+
+<script type="text/html">
+    // 所有全局的变量都是window的属性
+    /*var str = "张三";
+    //console.log(str);
+    // console.log(window.str);
+
+    function test() {
+    var age = 18;
+    console.log(age);
+    }
+
+    console.log(window.age);
+    test();*/
+
+    // 所有全局的函数都是window的方法
+    /* function func() {
+    console.log("11111");
+    }
+
+    func();
+    window.func();*/
+
+    // alert("哈哈哈");
+    // window.alert("哈哈哈");
+</script>
+<script type="text/html">
+    console.log(window.document);
+</script>
+<script type="text/html">
+    // 1.  获取事件源
+    var btn = document.getElementById("btn");
+    /* btn.onclick = function () {
+    alert("点我干啥?");
+    };*/
+
+    btn.onclick = deal;
+    function deal() {
+    alert("点我干啥?");
+    }
+
+
+    /*var btn2 = document.getElementsByClassName("my-btn")[0];
+    var btn3 = document.getElementsByTagName("button")[0];
+    var btn4 = document.getElementsByName("btn")[0];
+    var btn5 = document.querySelector(".my-btn");
+    var btn6 = document.querySelectorAll(".my-btn")[1];
+    console.log(btn1);
+    console.log(btn2);
+    console.log(btn3);
+    console.log(btn4);
+    console.log(btn5);
+    console.log(btn6);*/
+</script>
+<script>
+
+</script>
+</body>
+</html>

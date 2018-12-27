@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 600px;
+            height: 600px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+          <p id="word">哈哈哈</p>
+          <button id="btn">点我</button>
+          <img>
+    </div>
+<script type="text/html">
+    window.onload = function () {
+       // CRUD(增删改查)
+
+       var box = document.getElementById("box");
+
+       // 1. 创建节点
+       var img = document.createElement("img");
+       img.src = "img/img1.jpg";
+
+       // box.appendChild(img);
+
+        var btn = document.getElementsByTagName("button")[0];
+        box.insertBefore(img, btn);
+
+        // 2. 删除节点
+        var btn = document.getElementById("btn");
+        // word.parentNode.removeChild(word); // 自杀
+        // btn.remove();
+
+    }
+</script>
+<script type="text/html">
+    window.onload = function () {
+        // 新节点=要复制的节点.cloneNode(参数) ; 参数可选复制节点
+        var box = document.getElementsByClassName("box")[0];
+        var newTag = box.cloneNode(true);
+        // console.log(newTag);
+
+        document.body.appendChild(newTag);
+    }
+</script>
+<script>
+    window.onload = function () {
+        // 节点属性（节点.属性）
+        var img = document.getElementsByTagName("img")[0];
+
+        // 1. 获取：getAttribute(名称)
+        /*console.log(img.getAttribute("src"));
+        console.log(img.getAttribute("alt"));
+        console.log(img.src);
+        console.log(img.alt);*/
+
+        // 2. 设置：setAttribute(名称, 值)
+        img.setAttribute("src", "img/img2.jpg");
+        img.setAttribute("alt", "图片");
+        img.setAttribute("aaaa", "哈哈哈哈");
+        img.setAttribute("bbbb", "呵呵呵呵");
+
+        // console.log(img.getAttribute("aaaa"));
+
+        // 3. 删除：removeAttribute(名称)
+        img.removeAttribute("src");
+        img.removeAttribute("aaaa");
+        img.removeAttribute("bbbb");
+    }
+</script>
+</body>
+</html>

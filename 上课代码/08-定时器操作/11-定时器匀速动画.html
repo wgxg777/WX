@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 90px;
+            height: 90px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开始动画</button>
+    <div id="box"></div>
+<script>
+    window.onload = function () {
+        // 1. 获取需要的标签
+        var btn = document.getElementById("btn");
+        var box = document.getElementById("box");
+
+        // 2. 定义变量
+        var timer = null, begin = 0, step = 50, target = 599;
+        
+        // 3. 监听按钮的点击
+        btn.onclick = function () {
+            // 3.1 清除定时器
+            clearInterval(timer);
+
+            // 3.2 设置定时器
+            timer = setInterval(function () {
+                  // 相加
+                 begin += step;
+
+                 // 判断
+                 if(begin >= target){
+                     begin = target;
+                     clearInterval(timer);
+                 }
+                console.log(begin);
+
+                 // 动起来
+                 box.style.marginLeft = begin + 'px';
+            }, 100);
+        }
+    }
+</script>
+</body>
+</html>

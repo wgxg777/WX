@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/html">
+    /*
+      属性和方法
+    */
+    var dog = {
+        // 属性
+        name: "旺财",
+        age: 10,
+        dogFriends: ["阿黄", "阿菜", "飞毛腿"],
+
+        // 方法
+        eat:  function () {
+            console.log("吃");
+        },
+
+        run: function () {
+            console.log("跑");
+        }
+    };
+    /*console.log(typeof dog);
+    console.log(dog);
+
+    dog.name = "张三";
+    console.log(dog.name);
+
+    dog.eat();*/
+
+    // 对对象进行遍历
+    /*for(var i=0; i<dog.length; i++){
+        console.log(dog[i]);
+    }*/
+
+    for(var key in dog){
+        console.log(key);
+        console.log(dog[key]);
+    }
+</script>
+<script type="text/html">
+    // 1. 构造函数
+    function Person() {
+        var obj = new Object();
+        // 属性
+        obj.name = null;
+        obj.age = null;
+        obj.sex = null;
+
+        // 方法
+        obj.study = function () {
+            console.log(this.name + "在学习");
+        };
+
+        obj.sleep = function () {
+            console.log(this.name + "在睡觉");
+        };
+
+        return obj;
+    }
+
+
+    // 2. 属性和方法
+    var p =  Person();
+    p.name = "张三";
+    p.age = 18;
+    p.sex = "男";
+    console.log(p);
+    p.study();
+
+    var p1 = Person();
+    p1.name = "李四";
+    console.log(p1);
+</script>
+<script type="text/html">
+    // 1. 构造函数
+    function Dog(name, age, dogFriends) {
+        // 1.1 属性
+        this.name = name;
+        this.age = age;
+        this.dogFriends = dogFriends;
+
+        // 1.2 方法
+        this.eat = function (someThing) {
+            console.log(this.name + "在吃" + someThing);
+        };
+
+        this.run = function (someWhere) {
+            console.log(this.name + "跑" + someWhere);
+        }
+    }
+
+    // 小狗
+    var smallDog = new Dog("小花", 1);
+    smallDog.age = 10;
+    console.log(smallDog);
+
+    smallDog.eat("奶");
+    smallDog.run("天河公园");
+
+    // 大狗
+    var bigDog = new Dog("大花", 10, ["大大", "小小"]);
+    console.log(bigDog);
+
+    console.log(bigDog === smallDog);
+</script>
+<script type="text/html">
+    // 1. 构造函数
+    function Dog(option) {
+        // 1.1 属性
+        this.name = option.name;
+        this.age = option.age;
+        this.dogFriends = option.dogFriends;
+
+        // 1.2 方法
+        this.eat = function (someThing) {
+            console.log(this.name + "在吃" + someThing);
+        };
+
+        this.run = function (someWhere) {
+            console.log(this.name + "跑" + someWhere);
+        }
+    }
+
+    // 小狗
+    var smallDog = new Dog({name:"小花", age:1});
+    smallDog.age = 10;
+    console.log(smallDog);
+
+    smallDog.eat("奶");
+    smallDog.run("天河公园");
+
+    // 大狗
+    var bigDog = new Dog({name: "大花", age: 10, dogFriends: ["大大", "小小"]});
+    console.log(bigDog);
+
+    console.log(bigDog === smallDog);
+</script>
+<script type="text/html">
+    // var arr = [];
+
+
+   /* var arr1 = new Array();
+    var obj2 = new Object();*/
+
+    var obj = {
+        name: "张安",
+        eat: function () {
+            alert("吃");
+        }
+    };
+
+
+    obj.age = 19;
+    console.log(obj.age);
+    obj.name = "张三";
+    console.log(obj.name);
+    console.log(obj);
+
+    obj.eat = function () {
+       alert("喝");
+    };
+   // obj.eat();
+
+    obj.run = function () {
+        alert("跑");
+    };
+    obj.run();
+</script>
+<script type="text/html">
+   //  var arr = new Array();
+   /* // 给数组添加一个方法
+    arr.eat = function () {
+        alert("数组会吃东西!");
+    };
+
+    arr.eat();
+
+
+    var arr1 = new Array();
+    arr1.eat();*/
+
+   Array.prototype.test = "测试";
+   Array.prototype.eat = function () {
+       alert("我会吃东西");
+   };
+
+   var arr = new Array();
+   // arr.eat();
+   console.log("_____" + arr.test);
+
+   var arr1 = new Array();
+   // arr1.eat();
+   console.log("++++++" + arr.test);
+
+   console.log(arr.constructor);
+   console.log(arr1.constructor);
+   console.log(arr1.constructor === arr.constructor);
+   console.log(Array.constructor);
+</script>
+<script type="text/html">
+    // 1. 构造函数
+    function Dog(option) {
+    // 1.1 属性
+    this.name = option.name;
+    this.age = option.age;
+    this.dogFriends = option.dogFriends;
+
+    // 1.2 方法
+    /*this.eat = function (someThing) {
+    console.log(this.name + "在吃" + someThing);
+    };
+
+    this.run = function (someWhere) {
+    console.log(this.name + "跑" + someWhere);
+    }*/
+    }
+
+    /*
+    Dog.prototype.eat = function (someThing) {
+        console.log(this.name + "在吃" + someThing);
+    };
+
+    Dog.prototype.run = function (someWhere) {
+        console.log(this.name + "跑" + someWhere);
+    };
+    */
+
+    Dog.prototype = {
+        eat: function (someThing) {
+            console.log(this.name + "在吃" + someThing);
+        },
+
+        run: function (someWhere) {
+            console.log(this.name + "跑" + someWhere)
+        }
+    };
+
+    // 小狗
+    var smallDog = new Dog({name:"小花", age:1});
+    smallDog.age = 10;
+    console.log(smallDog);
+
+    smallDog.eat("奶");
+    smallDog.run("天河公园");
+
+    // 大狗
+    var bigDog = new Dog({name: "大花", age: 10, dogFriends: ["大大", "小小"]});
+    console.log(bigDog);
+
+    console.log(bigDog === smallDog);
+
+
+    console.log(smallDog.eat === bigDog.eat);
+</script>
+<script>
+    // 1. 构造函数
+    function Dog(option) {
+       this._init(option);
+    }
+
+    Dog.prototype = {
+        _init: function (option) {
+            // 1.1 属性
+            this.name = option.name;
+            this.age = option.age;
+            this.dogFriends = option.dogFriends;
+        },
+
+        eat: function (someThing) {
+            console.log(this.name + "在吃" + someThing);
+        },
+
+        run: function (someWhere) {
+            console.log(this.name + "跑" + someWhere)
+        }
+    };
+
+
+
+
+
+    // 小狗
+    var smallDog = new Dog({name:"小花", age:1});
+    smallDog.age = 10;
+    console.log(smallDog);
+
+    smallDog.eat("奶");
+    smallDog.run("天河公园");
+
+    // 大狗
+    var bigDog = new Dog({name: "大花", age: 10, dogFriends: ["大大", "小小"]});
+    console.log(bigDog);
+
+    console.log(bigDog === smallDog);
+
+    console.log(smallDog.eat === bigDog.eat);
+</script>
+</body>
+</html>

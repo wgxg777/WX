@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        * { margin:0px;
+            padding:0px;
+            list-style:none;
+        }
+          a{
+            text-decoration: none;
+            color: #000;
+        }
+        #box {
+        border: 2px solid red;
+          width: 322px;
+            height: 250px;
+            
+            margin: 100px auto;
+
+            position: relative;
+        
+        }
+      
+               .left, .right{
+            width: 60px;
+            height: 250px;
+            /*background-color:red;*/
+            float: left;
+        }
+
+        .center{
+            width: 200px;
+            height: 250px;
+            float: left;
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+            overflow: hidden;
+        }
+        li { 
+            line-height:27px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+         <ul class="left">
+        <li><a href="#">美食1</a></li>
+        <li><a href="#">美食2</a></li>
+        <li><a href="#">美食3</a></li>
+        <li><a href="#">美食4</a></li>
+        <li><a href="#">美食5</a></li>
+        <li><a href="#">美食6</a></li>
+        <li><a href="#">美食7</a></li>
+        <li><a href="#">美食8</a></li>
+        <li><a href="#">美食9</a></li>
+    </ul>
+    <div class="center">
+        <a href="#"><img  id="img" src="images/img1.jpg"  width="200" height="250"  /></a>
+        
+    </div>
+    <ul class="right">
+        <li><a href="#">美食10</a></li>
+        <li><a href="#">美食11</a></li>
+        <li><a href="#">美食12</a></li>
+        <li><a href="#">美食13</a></li>
+        <li><a href="#">美食14</a></li>
+        <li><a href="#">美食15</a></li>
+        <li><a href="#">美食16</a></li>
+        <li><a href="#">美食17</a></li>
+        <li><a href="#">美食18</a></li>
+    </ul>
+
+
+
+
+    </div>
+    <script>
+        window.onload = function () {
+            var img = document.getElementById("img");
+            var li = document.getElementsByTagName("li");
+            var box = document.getElementsByClassName("center");
+            var arr = [];
+            var num = 0;
+            var timer = null;
+
+            //把图片路径src存入数组
+            for (var i = 0; i < li.length; i++) {
+                arr.push("images/img" + (i + 1) + ".jpg")
+}
+
+
+            function fnTab() {
+                img.src = arr[num];
+
+
+            }
+           // 点击li
+            for (var i = 0; i < li.length; i++) {
+                li[i].index = i;//自定义属性，索引值
+                li[i].onclick = function () {
+                    num = this.index;
+                    fnTab();
+                    
+                }
+
+            }
+            //自动播放
+            
+            function autoPlay() {
+                timer = setInterval(function () {
+                    num++;
+                    num %= arr.length;
+                    fnTab();
+                }, 1000);
+            }
+            setTimeout(autoPlay, 2000);
+
+            li.onmouseover = function () {
+                clearInterval(timer);
+            }
+            li.onmouseout = function () {
+                autoPlay();
+            }
+
+
+          
+
+        }
+         
+
+
+
+       
+        
+       
+        
+                
+         
+          
+        
+
+        
+        
+            
+           
+        
+        
+            
+       
+          
+
+
+    </script>
+</body>
+</html>

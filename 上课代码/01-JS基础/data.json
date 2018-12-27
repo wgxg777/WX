@@ -1,0 +1,13 @@
+{
+"name": "旺财",
+"age": 10,
+"dogFriends": ["阿黄", "阿菜", "飞毛腿"],
+ "dd": {"name": "张三", "age": 18, "fri": []}
+}
+
+<xml>
+   <name>旺财</name>
+   <age>10</age>
+</xml>
+
+

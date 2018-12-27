@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body{
+            background-color: #000;
+            text-align: center;
+            padding: 100px;
+        }
+
+        #pic{
+            display: none;
+        }
+
+        #time{
+            font-size: 100px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+   <div id="time">5</div>
+   <img id="pic" src="images/flower.gif" alt="">
+<script>
+    window.onload = function () {
+      var timer =  setInterval(function () {
+          $('time').innerText -= 1;
+
+          // 判断
+          if( $('time').innerText === "0"){
+               // 清除定时器
+              clearInterval(timer);
+
+              // 隐藏时间
+              $('time').style.display = 'none';
+              $('pic').style.display = 'block';
+          }
+      }, 1000);
+
+        function $(id) {
+            return typeof id === "string" ? document.getElementById(id): null;
+        }
+    };
+
+
+</script>
+</body>
+</html>
