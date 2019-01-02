@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+*{
+		margin:0; 
+		padding:0;
+	}
+.Top{
+		width: 100%;
+		font-family: Sans-serif;
+		background-color: black ;	
+		height: 80px;
+}
+.header-mid {
+    margin: 0 auto;
+    width: 960px;
+    height: 80px;
+}
+.logo {
+   		float: left;
+    	margin-left: 20px;
+    	height: 80px;
+    	font-size:24px;
+	   	line-height: 80px;
+    	color:white ;
+}
+/*AD*/
+.AD{		
+		background-color:   #00CC00; 
+  height: 150px;
+		width: 100%;
+		opacity: 0.9;
+    	position: relative;
+}
+
+/*主内容*/
+.main {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #CCC;
+}
+.nav-main {
+    margin: 0 auto;
+    width: 960px;
+    height: 60px;
+}
+.nav-home,
+.nav-profile,
+.nav-about {
+    float: left;
+    box-sizing: border-box;
+    margin-top: 16px;
+    width: 100px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    border: 1px solid #CCC;
+    border-bottom: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.nav-profile,
+.nav-about {
+    background-color: #DDD;
+}
+/**********/
+.row {
+    display: flex;
+}
+.grid-cell {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    margin: 5px;
+    min-width: 200px;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    border: 1px solid #DDD;
+    box-shadow: 0 0 5px #DDD;
+}
+.row:nth-child(1) .grid-cell:nth-child(1),
+.row:nth-child(1) .grid-cell:nth-child(2){
+    flex: 0 0 34%;
+}
+
+.Main {
+    margin: 10px auto;
+    width: 960px;
+}
+/*页脚*/
+.foot{
+		color: white ;
+		background-color: gray;
+		height: 100px;
+		width: 100% ;
+		
+}
+</style>
+</head>
+<body>
+<div class = "Top"> 
+	<div class="header-mid">
+		<div class="logo">
+                Logo
+    	</div> 
+    </div>
+</div>
+<div class = "AD"> 这是广告 </div>
+<div class="main">
+        <div class="nav-main">
+            <div class="nav-home">HOME</div>
+            <div class="nav-profile">PROFILE</div>
+            <div class="nav-about">ABOUT</div>
+        </div>
+    </div>
+<div class = "Main">
+        <div class="row">
+            <div class="grid-cell">This is Content1</div>
+            <div class="grid-cell">Maybe Content2</div>
+            <div class="grid-cell">Content3</div>
+        </div>
+        <div class="row">
+            <div class="grid-cell">Content4</div>
+            <div class="grid-cell">Content5</div>
+            <div class="grid-cell">Content6</div>
+            <div class="grid-cell">Content7</div>
+        </div>
+        <div class="row">
+            <div class="grid-cell">Content8</div>
+            <div class="grid-cell">Content9</div>
+            <div class="grid-cell">Content10</div>
+        </div>
+    </div>
+<div class = "Foot"  align="center">@2018</div>
+</body>
+</html>
