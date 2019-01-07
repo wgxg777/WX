@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+  
+    * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+           
+            background-repeat: no-repeat;
+            background-size:100% 100%;
+        }
+    #headtop{
+        width: 100%;
+        height: 60px;
+        background-color: rgb(0, 0, 0);
+    }
+    #head1{
+        width: 1226px;
+        height: 60px;
+        background-color:  rgb(0, 0, 0);
+        margin: 0 auto;
+    }
+    .logo{
+        color: white;
+        float: left;
+        line-height: 60px;
+        margin-left: 20px;
+        font-size: 24px;
+        
+    }
+    #gowuche{
+        color: white;
+        float: right;
+        line-height: 60px;
+       margin-right: 20px;
+        font-size: 18px;
+    }
+   
+    #nav {
+            height: 70px;
+            border-bottom: 1px solid #CCCCCC;
+            margin: 0;
+            
+        }
+        #nav ul {
+            position: relative;
+            width: 1226px;
+            margin: 0 auto;
+            list-style-type: none;
+            top: 20px;
+        }
+        #nav li {
+            float: left;
+            height: 50px;
+            padding: 15px 20px;
+            margin: 0;
+            border-top: 1px solid #CCCCCC;
+            border-left: 1px solid #CCCCCC;
+            border-right: 1px solid #CCCCCC;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            text-align: center;
+            background-color: #EEEDEB;
+        }
+        #nav #atv{
+            background-color: white;
+            border-bottom: 1px solid white;
+        }
+        .content {
+            width: 1226px;
+            height: 100%;
+            margin: 0 auto;
+            display: none;
+           
+            
+        }
+        #move{
+            display: block ;
+        }
+        .content ul{
+            display: flex ;
+            flex-wrap: wrap ; 
+            
+        }
+       
+        .content ul li {
+            border: 1px black solid;
+            flex: 200px 1;
+            margin: 5px;
+            text-align: center;
+            background-color:#FAFAFA;
+            overflow: hidden;
+        }
+        .content .lit :hover{
+            background-color: rgb(212, 212, 212);
+            cursor:pointer
+        }
+        
+        
+
+        
+        
+     #foot{
+         position: relative;
+         top: 20px;
+         height: 120px;
+         background-color: gray;
+         margin: 0 auto;
+         padding-top: 20PX
+     }
+
+     /*轮播css*/
+#container{
+	width:1226px;
+	height:460px;
+	position:relative;
+	overflow:hidden;
+	border-radius:10px;
+    margin: 10px auto
+    
+}
+.item{
+	position:absolute;
+}
+ 
+#tabs{
+	position:absolute;
+	right:30px;
+	bottom:20px;
+}
+.tab{
+	float:left;
+	margin-right:10px;
+	width:12px;
+	height:12px;
+	border:3px solid rgba(184,178,182,.8);
+	border-radius:50%;
+	background:#989196;
+	cursor:pointer;
+}
+.active{
+	background:#fff;
+	border-color:#999497;
+}
+.btn{
+	position:absolute;
+	top:50%;
+	margin-top:-35px;
+	width:40px;
+	height:70px;
+	color:#d6d3d5;
+	font-size:36px;
+	line-height:70px;
+	text-align:center;
+	cursor:pointer;
+}
+.btn:hover{
+	background:rgba(127,120,125,0.8);
+}
+.prev{
+	position:absolute;
+	left:0px;
+	border-radius:0 5px 5px 0;	
+}
+.next{
+	position:absolute;
+	right:0;
+	border-radius:5px 0 0 5px;
+}
+/* 分页*/
+#fenye{
+ width: 800px;
+ height: 80px;
+
+ margin:  10px auto;
+
+}
+#fenye ul{
+    margin-left: 263px ;
+    
+}
+#fenye ul li{
+    float: left;
+    padding: 5px;
+    background-color: rgb(124, 124, 255);
+    margin: 5px;
+    width: 45px;
+    height: 39px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+    
+}
+#fenye ul li:hover{
+    cursor:pointer
+}
+
+
+
+
+    </style>
+    
+   <script src="jquery.js"></script>
+   
+</head>
+<body>
+        <div id="headtop">
+            <div id="head1">
+                <div class="logo">
+                    大米商城
+             </div>
+             <div id="gowuche">我的购物车</div>
+            </div>
+        </div>
+        
+<div id="container">
+        <a class="item" href="#"><img src="img/T1oTJjBKKT1RXrhCrK.jpg" alt=""></a>
+        <a class="item" href="#"><img src="img/T1RICjB7DT1RXrhCrK.jpg" alt=""></a>
+        <a class="item" href="#"><img src="img/T1hiDvBvVv1RXrhCrK.jpg" alt=""></a>
+        <a class="item" href="#"><img src="img/T1jrxjB_VT1RXrhCrK.jpg" alt=""></a>
+        <a class="item" href="#"><img src="img/T1vWdTBKDv1RXrhCrK.jpg" alt=""></a>
+   
+        <div class="btn prev"><</div>
+        <div class="btn next">></div>
+   
+        <ul id="tabs">
+          <li class="tab active"></li>
+          <li class="tab"></li>
+          <li class="tab"></li>
+          <li class="tab"></li>
+          <li class="tab"></li>
+        </ul>
+</div>
+
+     
+        </div>
+        <div id=nav>
+            <ul>
+                <li id="atv">HOME</li>
+                <li>PROFLE</li>
+                <li>ABOUT</li>
+            </ul>
+
+        </div>
+        <div class="content"  id="move">
+                <ul>
+                    
+                        <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                            <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                    <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                        <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                            <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                    <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                        <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                            <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                    <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                        <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                            <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                                <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                                    <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                                        <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                                            <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                                                <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                                                    <li class="lit"><div id="ipx"><img src="sp1.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                         
+                                                                                                    
+                                                                                                    </ul></div>
+
+                                                                                                    <div class="content" >
+                                                                                                        <ul>
+                                                                                                            
+                                                                                                                <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                                                                    <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                        <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                            <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp2.jpg"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                
+                                                                                                                                          
+                                                                                                                                                                                            </ul></div>
+                                                                                                                                                                                            <div class="content" >
+                                                                                                                                                                                                <ul>
+                                                                                                                                                                                                    
+                                                                                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li> 
+                                                                                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                                <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                                        <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                                            <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                                            <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                                                <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                                                <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                                                    <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                                                    <li class="lit"><div id="ipx"><img src="sp3.png"style="width: 155px;height: 174px; "><p style="font-size:18px ;margin :10px auto">磐石DIY游戏主机</p>
+                                                                                                                                                                                                                                                                                        <p style="font-size:10px; color:#ccc;margin :10px auto ">带给你极致的游戏体验</p><p style="font-size:10px;  padding :10px 0 40px 0">仅需7777元</p></div></li>
+                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                    </ul></div>                                                                                                                                                                                            
+                <div id="fenye">
+                    <ul>
+                        <li id="first">首页</li>
+                        <li id="one">1</li>
+                        <li id="two">2</li>
+                        <li id="three">3</li>
+                        <li id="last">尾页</li>
+                    </ul>
+                </div>
+        <div id="foot"align="center">baidu.com</div>
+        <script src="lunbo.js"></script>
+        <script>
+            var content =$(".content");
+            $("#first").click(function(){
+ 
+                $('.content').eq(0).attr("id","move").siblings('.content').removeAttr("id");
+  })
+
+             $("#one").click(function(){
+ 
+                $('.content').eq(0).attr("id","move").siblings('.content').removeAttr("id");
+  })
+           $("#two").click(function(){
+ 
+        $('.content').eq(1).attr("id","move").siblings('.content').removeAttr("id");
+   })
+    $("#three").click(function(){
+ 
+  $('.content').eq(2).attr("id","move").siblings('.content').removeAttr("id");
+ })
+             
+ $("#last").click(function(){
+ 
+ $('.content').eq(2).attr("id","move").siblings('.content').removeAttr("id");
+})
+
+
+        
+        </script>
+        
+        
+    </body>
+    </html>

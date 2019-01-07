@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #wrap {
+        height: 719px;
+        width: 100;
+        background-image: url(bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+    }
+    #head {
+        height: 80px;
+        width: 100;
+        background-color:rgb(41, 150, 114);
+        text-align: center;
+        position: relative;
+    }
+    #foot {
+        width: 100;
+        height: 126px;
+        background-color: #CC9933;
+        position: relative;
+    }
+    #wrap .logGet {
+        height: 408px;
+        width: 368px;  
+        position: absolute;
+        background-color: #FFFFFF;
+        top:25%;
+        left:42%;
+        display: none;
+        
+    }
+    .logC a button {
+        width: 100%;
+        height: 45px;
+        background-color: #ee7700;
+        border: none;
+        color: white;
+        font-size: 18px;
+        margin: 5px 0;
+    }
+    .logGet .logD.logDtip .p1 {
+        display: inline-block;
+        font-size: 28px;
+        margin-top: 30px;
+        width: 86%;
+        
+    }
+    #wrap .logGet .logD.logDtip {
+        width: 86%;
+        border-bottom: 1px solid #ee7700;
+        margin-bottom: 60px;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+  
+    .logGet .lgD input {
+        width: 100%;
+        height: 42px;
+        text-indent: 2.5rem;
+       
+    }
+    #wrap .logGet .lgD {
+        width: 86%;
+        position: relative;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #wrap .logGet .logC {
+        width: 86%;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+    }
+
+
+
+
+    #wrap .signGet {
+        height: 466px;
+        width: 368px;  
+        position: absolute;
+        background-color: #FFFFFF;
+        top:25%;
+        left:42%;
+        
+        
+    }
+
+    .signGet a button {
+        width: 100%;
+        height: 45px;
+        background-color: #ee7700;
+        border: none;
+        color: white;
+        font-size: 18px;
+        margin: 5px 0;
+    }
+    .signGet .logD.logDtip .p1 {
+        display: inline-block;
+        font-size: 28px;
+        margin-top: 30px;
+        width: 86%;
+        
+    }
+    #wrap .signGet .logD.logDtip {
+        width: 86%;
+        border-bottom: 1px solid #ee7700;
+        margin-bottom: 60px;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+  
+    .signGet .lgD input {
+        width: 100%;
+        height: 42px;
+        text-indent: 2.5rem;
+       
+    }
+    #wrap .signGet .lgD {
+        width: 86%;
+        position: relative;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+  
+
+    #wrap .signGet .logC {
+        width: 86%;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+    }
+    #wrap .signGet .lgD p{
+        margin-left: 40px;
+        margin-top: 5px; 
+        color: RED;
+        float: left;
+        font-size: 10px;
+          
+    }
+     
+     
+    .title {
+        font-family: "宋体";
+        color: #FFFFFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);  /* 使用css3的transform来实现 */
+        font-size: 36px;
+        height: 40px;
+        width: 30%;
+    }
+     
+    .copyright {
+        font-family: "宋体";
+        color: #FFFFFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);  /* 使用css3的transform来实现 */
+        height: 60px;
+        width: 40%;
+        text-align:center;
+    }
+        
+     
+ 
+    #foot .copyright p {
+        height: 24px;
+        width: 100%;
+    }
+    </style>
+    </head>
+     
+    <body>
+    <div class="header" id="head">
+      <div class="title">购物系统</div>
+        
+    </div>
+        
+    <div class="wrap" id="wrap">
+        <div class="logGet">
+                <!-- 头部提示信息 -->
+                <div class="logD logDtip">
+                    <p class="p1">登录</p>
+                </div>
+                <!-- 输入框 -->
+                <div class="lgD">
+                   
+                    <input type="text" id="id1"
+                        placeholder="输入邮箱" />
+                </div>
+                <div class="lgD">
+                    
+                    <input type="text" id="pwd"
+                        placeholder="输入用户密码" />
+                </div>
+                <div class="logC">
+                    <a ><button id="denglu">登 录</button></a>
+                    <a id="href" href=""><button id="zhuce" </button>注 册</button></a>
+                </div>
+            </div>
+            <div>
+                <div class="signGet">
+                    <div class="logD logDtip">
+                        <p class="p1">注册</p>
+                    </div>
+                    <!-- 输入框 -->
+                    <div class="lgD">
+                       
+                        <input type="text" id="email" 
+                            placeholder="输入邮箱" />
+                            <p id= "emailp"></p>
+                    </div>
+                    <div class="lgD">
+                        
+                        <input type="text" id="password"
+                            placeholder="输入用户密码" />
+                            <p id="passwordp"></p>
+                    </div>
+                    <div class="lgD">
+                        
+                        <input type="text" id="password1"
+                            placeholder="再次输入密码" />
+                            <p id=password1p></p>
+                    </div>
+                    <div class="logC">
+                        
+                        <a ><button id="zhucego" </button>注 册</button></a>
+                    </div>
+
+
+                </div>
+            </div>
+            
+    </div>
+        
+    <div class="footer" id="foot">
+      <div class="copyright">
+        <p>Copyright © 2018 Qunar.com Inc. All Rights Reserved.</p>
+        <div class="img">
+            <i class="icon"></i><span>联系邮箱：1506884346@QQ.com</span>
+        </div>
+        
+        <div class="img">
+            <i class="icon1"></i><span>联系地址：重庆商务职业学院</span>
+        </div>
+          
+        <div class="img">
+          <i class="icon2"></i><span>联系电话：18875258611</span>
+        </div>
+     
+     
+      </div>
+        
+    </div>
+        
+        
+    </body>
+    <script src=jquery.js></script>
+    <script>
+        var idd;
+        var pwdd;
+      
+    $("#denglu").click(function(){
+   if($("#id1").val()==idd&&$("#pwd").val()==pwdd){
+    window.location.href="index.html";
+
+
+
+   }
+   else{
+       alert("账号或密码错误")
+   }
+  
+  
+   
+       
+
+
+
+    })
+
+//登陆界面注册按钮        
+   $("#zhuce").click(function(){
+    $(".logGet").toggle(1000);
+    $(".signGet").toggle(1000);
+
+})
+
+//注册界面按钮
+$("#zhucego").click(function(){
+    var isEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    var ispassword = /^[a-zA-Z]\w{5,17}$/;
+    if(isEmail.test($('#email').val())){
+      if(ispassword.test($('#password').val())){
+          if($('#password').val()==$('#password1').val()){
+              
+              $(".signGet").toggle(1000);
+              $(".logGet").toggle(1000);
+              idd=$('#email').val();
+              pwdd=$('#password').val();
+              
+              alert("注册成功")
+
+
+          }
+          else{alert("密码不一致")}
+      }  
+      else{alert("密码格式错误")}
+    }
+    else{
+        alert("邮箱错误")
+    }
+      
+    
+    
+   
+   
+})
+
+$("#email").blur(function(){
+	 //获取id对应的元素的值，去掉其左右的空格
+	 var email=$("#email").val();
+	 //验证邮箱格式的js正则表达式
+	 var isEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+     var ispassword = /^[a-zA-Z]\w{5,17}$/;
+	 //清空显示层中的数据    
+	 $("#emailp").html("");
+	 if(email == ""){
+		   $("#emailp").html("邮箱不能为空");
+	 }
+	 else if(!(isEmail.test(email))){
+		   $("#emailp").html("邮箱格式不正确");
+	 }
+	 else{
+           return 
+           
+        }
+
+})
+$("#password").blur(function(){
+	 //获取id对应的元素的值，去掉其左右的空格
+	 var password = $('#password').val();
+	 //验证邮箱格式的js正则表达式
+	 var ispassword = /^[a-zA-Z]\w{5,17}$/;
+	 //清空显示层中的数据    
+	 $("#passwordp").html("");
+	 if(password == ""){
+		   $("#passwordp").html("密码不能为空");
+	 }
+	 else if(!(ispassword.test(password))){
+		   $("#passwordp").html("以字母开头，长度在6~18之间，只能包含字母、数字和下划线");
+	 }
+	 else{
+
+           return ;
+           
+        }
+
+})
+
+$("#password1").blur(function(){
+    var password1=$('#password1').val();
+    var password = $('#password').val();
+    if(password1==password){
+        return ;
+    }else{
+        $("#password1p").html("密码不一致");
+    }
+
+
+
+})
+
+
+    </script>
+   
+</html>
