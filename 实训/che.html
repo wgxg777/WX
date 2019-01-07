@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #content{
+        width: 1226px;
+        height: 100%;
+        margin: 0 auto;
+    }
+    h1{
+            text-align: center;
+            color: #FF6700;
+    }
+    #content table{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid whitesmoke;
+            border-collapse: collapse;
+    }
+    table th, table td{
+            border: 2px solid whitesmoke;
+            padding: 5px;
+            text-align: center;
+        }
+        table th{
+            background-color: #FF6700;
+            color: #FFFFFF;
+        }
+
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div id="content">
+    <h1>我的购物车</h1>
+    <table>
+        <thead>
+                <tr>
+                        <th>商品</th>
+                        <th>单价（元）</th>
+                        <th>数量</th>
+                        <th>金额（元）</th>
+                        <th>删除</th>
+                    </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+        <tr>
+                <td colspan="3" >总计</td>
+                <td id="total"></td>
+                <td></td>
+            </tr>
+            </tfoot>
+            
+        
+
+        
+    </table>
+    <div id="total"></div>
+    <br/>
+    <br/>
+    <h1>大米商城</h1>
+    <table id="table1">
+            <tr>
+                    <th>商品</th>
+                    <th>单价（元）</th>
+                    <th>颜色</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>磐石DIY游戏主机</td>
+                    <td>100</td>
+                    <td>黑色</td>
+                    <td align="center">
+                        <input type="button" value="放入购物车" onclick="add_shoppingcart(this);"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>小米20</td>
+                    <td>250</td>
+                    <td>红色</td>
+                    <td align="center">
+                        <input type="button" value="放入购物车" onclick="add_shoppingcart(this);"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>瑞士军刀</td>
+                    <td>168</td>
+                    <td>黑色</td>
+                    <td align="center">
+                        <input type="button" value="放入购物车" onclick="add_shoppingcart(this)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>大哥大</td>
+                    <td>550</td>
+                    <td>金色</td>
+                    <td align="center">
+                        <input type="button" value="放入购物车" onclick="add_shoppingcart(this);"/>
+                    </td>
+                </tr>
+    
+    </table>
+    <script>
+        
+    function add_shoppingcart(btn){
+        
+        var $tds =$(btn).parent().siblings();
+        var name = $tds.eq(0).html();
+        var price = $tds.eq(1).html();
+        var color = $tds.eq(2).html();
+        var $trs = $("#tb tr");
+        var amount = 0;
+        for(var i=0;i<$trs.length;i++){
+            var $tbtds = $trs.eq(i).children(); 
+            var sname =  $tbtds.eq(0).html();
+            if(sname==name)
+            {
+                var num=parseInt($tbtds.eq(2).children().eq(1).val()); //获得num
+                    $tbtds.eq(2).children().eq(1).val(++num);  //num+1
+                    
+                    //单项金额重新计算，并修改
+                    //这个price是商城表格的price，因为是一样的价格，没必要在购物车的价格上获取
+                    $tbtds.eq(3).html(price*num);
+ 
+                    //总计功能
+                    total();
+                
+                return
+            }
+
+
+        }
+
+        var div= "<tr>"+
+                "<td>"+name+"</td>"+
+                "<td>"+price+"</td>"+
+                "<td >"+
+                "<input type='button' value=' - ' onclick='decrease(this);'/> "+
+                "<input type='text' size='3' readonly value='1' align='center'/> "+
+                "<input type='button' value=' + ' onclick='increase(this);'/>"+
+                "</td>"+
+                "<td>"+price+"</td>"+
+                "<td >"+
+                "<input type='button' value=' 删除 ' onclick='del(this);'/>"+
+                "</td>"+
+                "</tr>";
+                $("#tb").append(div);
+                total();
+
+    }
+    function increase(btn) {
+ 
+            //更新购物车一系列的数据
+            var $td = $(btn).prev();    //找到上一个数量的兄弟
+            var num = parseInt($td.val());
+            $td.val(++num);   //num为number类型，这里是用val（）
+            //获取单价，在计算总计
+            var price = parseInt($(btn).parent().prev().html()); 
+            $(btn).parent().next().html(num * price);
+            total();
+            
+            
+        }
+
+         function decrease(btn) {
+             
+ 
+            //更新购物车一系列的数据
+            var $td = $(btn).next();    //找到上一个数量的兄弟
+            var num = parseInt($td.val());
+            if(num<=1){
+               return
+            }
+            $td.val(--num);   //num为number类型，这里是用val（）
+            //获取单价，在计算总计
+            var price = parseInt($(btn).parent().prev().html()); 
+            $(btn).parent().next().html(num * price);
+            total();
+        }
+        function total() {
+            //获取所有的购物车里头的trS
+            var $trs = $("#tb tr");
+            var amount = 0;
+            //遍历所有tr
+            for(var i=0;i<$trs.length;i++){
+                //获取每个商品的总价,
+                var money =parseInt($trs.eq(i).children().eq(3).html());
+                
+                amount += money;
+            }
+            //值给总计表格单元格
+            $("#total").html(amount);
+        }
+        function del(btn){
+            $(btn).parent().parent().remove();
+            total();
+        }
+    </script>
+
+    
+</div>    
+</body>
+</html>
