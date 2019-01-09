@@ -1,0 +1,2 @@
+已知bug：由于本人用vscode编写的代码 在用vs2012打开时字符编码格式会自动改变，导致index.html的轮播塌陷.
+如果文件错误，请重新解压或到https://github.com/wgxg777/WX 自行下载
