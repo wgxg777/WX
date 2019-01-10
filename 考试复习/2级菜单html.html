@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #box{
+    width: 860px;
+    height: 70px;
+    margin: 0 auto;
+    background-color:rebeccapurple;
+    }
+    #box ul li{
+        float: left;
+        width: 172px;
+        text-align: center;
+        height: 70px;
+        line-height: 70px;
+        color: rgb(255, 255, 255);
+    }
+    #box ul li ul {
+        display: none;
+        position: relative;
+
+    }
+    #box ul li ul li{
+        background-color: aquamarine;
+        width: 172px;
+        text-align: center;
+        height: 70px;
+        line-height: 70px;
+        color: rgb(255, 255, 255);
+        
+    }
+    #box ul li:hover ul {
+        display: block;
+        
+        
+    }
+    #box ul li:hover{
+        background-color: rgb(244, 158, 255);
+    }
+    
+
+   
+
+
+
+
+
+</style>
+<body>
+    <div id="box">
+        <ul>
+            <li>一级菜单
+                    <ul>
+                            <li>二级菜单</li>
+                            <li>二级菜单</li>
+                            <li>二级菜单</li>
+                        </ul>
+            </li>
+            <li>一级菜单</li>
+            <li>一级菜单</li>
+            <li>一级菜单</li>
+            <li>一级菜单</li>
+        </ul>
+
+
+
+    </div>
+</body>
+</html>
