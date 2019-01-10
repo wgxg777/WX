@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        * {
+            border:0;
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        #box {
+            width:30%;
+            height:200px;
+            border:2px solid black;
+        }
+        #box li {
+            float:left;
+            width:50%;
+            text-align:center;
+            cursor:pointer;
+        }
+            #box div {
+                display:none;
+            }
+        .nav {
+            background-color:#ccc;
+        }
+        #box .content {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li class="nav">标签1</li>
+            <li>标签2</li>
+        </ul>
+        <div class="content">
+            内容1
+        </div>
+        <div>
+            内容2
+        </div>
+    </div>
+    <script src="jquery.js">
+    </script>
+    <script>
+        $(function () {
+            $("#box li").click(function () {
+                if (!($(this).hasClass("nav"))) {
+                    //动态设置li的class
+                    $(".nav").removeClass("nav");
+                    $(this).addClass("nav");
+                    //动态设置div的class
+                    $(".content").removeClass("content");
+                    //alert($(this).index());
+                    $("#box>div").eq($(this).index()).addClass("content");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
