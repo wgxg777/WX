@@ -114,11 +114,15 @@
     <script>
         
     function add_shoppingcart(btn){
+        //获取添加按钮的兄弟节点
+        var $tds = $(btn).parent().siblings();
         
-        var $tds =$(btn).parent().siblings();
+        console.log($tds)
+        //具体的取出来
         var name = $tds.eq(0).html();
         var price = $tds.eq(1).html();
         var color = $tds.eq(2).html();
+
         var $trs = $("#tb tr");
         var amount = 0;
         for(var i=0;i<$trs.length;i++){

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Complex flexbox example</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            list-style:none;
+
+        }
+        #box {
+             width:30%;
+            height:200px;
+            border:2px solid black;
+            margin: 0 auto
+        }
+            #box li {
+            float:left;
+            width:50%;
+            text-align:center;
+            cursor:pointer;
+        }
+            #box div {
+                width:100%;
+                text-align:center;
+                line-height:150px;
+                display:none
+            }
+        #act {background-color:#ccc;
+        }
+
+    
+
+     
+   
+      
+    </style>
+  </head>
+  <body>
+    <div id="box">
+        <ul>
+            <li id="act">1111</li>
+            <li>2222</li>
+        </ul>
+        <div> 1111</div>
+        <div>2222</div>
+
+    </div>
+      
+      <script src="../实训/jquery.js"></script>
+      <script>
+          $(function () {
+              $("#box").find("li").click(function () {
+                  $("#box").find("li").attr('id', '');
+                  $("#box").find("div").css('display', 'none');
+                  $(this).attr('id', 'act');
+                  $("#box").find("div").eq($(this).index()).css('display', 'block');
+              })
+
+
+
+          })
+      </script>
+  </body>
+</html>
