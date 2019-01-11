@@ -48,7 +48,7 @@
     <script src="jquery.js">
     </script>
     <script>
-        $(function () {
+      /*  $(function () {
             $("#box li").click(function () {
                 if (!($(this).hasClass("nav"))) {
                     //动态设置li的class
@@ -59,8 +59,15 @@
                     //alert($(this).index());
                     $("#box>div").eq($(this).index()).addClass("content");
                 }
-            });
+            });*/
+            $(function () {
+            $("#box").find("li").click(function(){
+            $("#box").find("li").attr('class','');
+            $("#box").find('div').css('display', 'none');
+            $(this).attr('class','nav');
+            $('#box').find('div').eq($(this).index()).css('display','block')
         });
+    })
     </script>
 </body>
 </html>

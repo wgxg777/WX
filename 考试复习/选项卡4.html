@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    * {
+	margin:0;
+	padding:0;
+}
+#div1 div {
+	width:290px;
+	height:200px;
+	display:none;
+	padding:5px;
+	text-indent:2em;
+	background:lavenderblush;
+	color:#666;
+	font-size:16px;
+}
+#div1 {
+	font-size:0;
+	width:300px;
+	padding:20px;
+	overflow:hidden;
+}
+#div1 input {
+	font-size:14px;
+	display:inline-block;
+	width:100px;
+	border:none;
+	height:30px;
+	line-height:30px;
+	border-left:1px solid #cdcdcd;
+	box-sizing:border-box;
+}
+#div1 input:first-of-type {
+	border-left:none;
+}
+.active {
+	background:darkcyan;
+	color:#fff;
+}
+
+    
+    
+    </style>
+    
+</head>
+<body>
+    <div id="div1">
+        <input type="button" value="111" class="active">
+        <input type="button" value="222">
+        <input type="button" value="333">
+        <div style="display: block;">11111111111111</div>
+        <div>22222222</div>
+        <div>3333333333333333</div>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $(function() {
+    $('#div1').find('input').click(function() {
+        $('#div1').find('input').attr('class', '');
+        $('#div1').find('div').css('display', 'none');
+        $(this).attr('class', 'active');
+        $('#div1').find('div').eq($(this).index()).css('display', 'block');
+    })
+})
+    </script>
+</body>
+</html>
