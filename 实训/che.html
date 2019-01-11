@@ -56,6 +56,7 @@
 
         </tbody>
         <tr>
+
                 <td colspan="3" >总计</td>
                 <td id="total"></td>
                 <td></td>
@@ -66,7 +67,7 @@
 
         
     </table>
-    <div id="total"></div>
+    
     <br/>
     <br/>
     <h1>大米商城</h1>
@@ -125,6 +126,7 @@
 
         var $trs = $("#tb tr");
         var amount = 0;
+        
         for(var i=0;i<$trs.length;i++){
             var $tbtds = $trs.eq(i).children(); 
             var sname =  $tbtds.eq(0).html();

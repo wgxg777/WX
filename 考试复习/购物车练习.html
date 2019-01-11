@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 860px;
+           
+            border: 2px salmon solid;
+            margin: auto;
+        }
+        #box table{
+            width: 100%;
+            border: 2px solid whitesmoke;
+            border-collapse: collapse;
+    
+        }
+        table th,table td {
+            border: 2px solid whitesmoke;
+            padding: 5px;
+            text-align: center;
+        }
+        table th{
+            background-color: #FF6700;
+            color: #FFFFFF;
+        }
+        h1{
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <table>
+            <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>颜色</th>
+                    <th>编号</th>
+                    <th>操作</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>小米5</td>
+                    <td>200</td>
+                    <td>红色</td>
+                    <td>001</td>
+                    <td><button onclick="add(this);">添 加</button></td>
+                    
+                </tr>
+                <tr>
+                        <td>航母</td>
+                        <td>205550</td>
+                        <td>红色</td>
+                        <td>021</td>
+                        <td><button onclick="add(this);">添 加</button></td>
+                        
+                    </tr>
+                    <tr>
+                            <td>破译版支付宝</td>
+                            <td>206550</td>
+                            <td>红色</td>
+                            <td>004</td>
+                            <td><button onclick="add(this);">添 加</button></td>
+                            
+                        </tr>
+            </tbody>
+            
+</table>
+<br/>
+<br/>
+<h1 >我的购物车</h1>
+<table >
+        <thead>
+                <tr>
+                        <th>商品</th>
+                        <th>单价（元）</th>
+                        <th>数量</th>
+                        <th>金额（元）</th>
+                        <th>删除</th>
+                    </tr>
+        </thead>
+        <tbody id="tb1">
+
+        </tbody>
+
+              <tfoot>
+                  <tr>
+                        <td colspan="3" >总计</td>
+                        <td id="total"></td>
+                        <td></td>
+                  </tr>
+              </tfoot>  
+    </table>
+
+
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        function add(btn){
+            var tds =$(btn).parent().siblings();
+            var name =tds.eq(0).html();
+            var price =tds.eq(1).html();
+            var color =tds.eq(2).html();
+            var num =tds.eq(3).html();
+           // console.log(name+price)
+
+
+
+           var $trs =$("#tb1 tr")
+           var amount = 0;
+           for(var i=0;i<$trs.length;i++){
+               var $tds=$trs.eq(i).children();
+               var sname=$tds.eq(0).html();
+               if(sname==name){
+                  var num =parseInt($tds.eq(2).children().eq(1).val());
+                  $tds.eq(2).children().eq(1).val(++num);
+                  $tds.eq(3).html(num*price)
+                   
+                total();
+                   return
+               }
+
+
+
+           }
+
+
+           var tr1 = "<tr>"+
+            "<td>"+name+"</td>"+
+            "<td>"+price+"</td>"+
+            "<td>"+"<input type='button' value='-' onclick='subNum(this);'>"+
+                "<input type='text' readonly value='1' size=3>"+
+                "<input type='button'  value='+' onclick='addNum(this) ;'>"+"</td>"+
+                "<td>"+price+"</td>"+
+                "<td>"+"<input type='button' value='删除' onclick='del(this);'>"+"</td>"+
+            "</tr>";
+           $("#tb1").append(tr1);
+           total();
+
+
+
+        }
+        function total() {
+            //获取所有的购物车里头的trS
+       var $trs=$("#tb1 tr");
+       var amount = 0;
+       for(var i=0;i<$trs.length;i++){
+           var money =parseInt( $trs.eq(i).children().eq(3).html());
+           amount+=money;
+       }
+       $("#total").html(amount);
+        }
+     
+
+
+
+      
+        function subNum(btn){
+            var $td =$(btn).next();
+            var num =parseInt($td.val())
+            if(num<=1){
+                return
+            }
+            $td.val(--num)
+            var price =$(btn).parent().prev().html();
+            $(btn).parent().next().html(price*num);
+            total();;
+
+        }
+        function addNum(btn){
+            var $td =$(btn).prev();
+            var num =parseInt($td.val())
+             $td.val(++num)
+            var price =$(btn).parent().prev().html();
+            $(btn).parent().next().html(price*num);
+            total();
+
+        }
+        function del (btn){
+            $(btn).parent().parent().remove();
+            total();
+            
+        }
+         
+    </script>
+</body>
+</html>
