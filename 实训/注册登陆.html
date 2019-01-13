@@ -13,7 +13,7 @@
     }
     #wrap {
         height: 719px;
-        width: 100;
+        width: 100%;
         background-image: url(bg.jpg);
         background-repeat: no-repeat;
         background-position: center center;
@@ -347,7 +347,7 @@ $("#email").blur(function(){
 	 var email=$("#email").val();
 	 //验证邮箱格式的js正则表达式
 	 var isEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-     var ispassword = /^[a-zA-Z]\w{5,17}$/;
+     
 	 //清空显示层中的数据    
 	 $("#emailp").html("");
 	 if(email == ""){

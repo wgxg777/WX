@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .box{
+        height: 719px;
+        width: 100%;
+        background-color: aqua;
+        position: relative;
+
+    }
+    h1{
+        text-align: center;
+    }
+    
+    .box input {
+        width: 100%;
+        height: 42px;
+        text-indent: 2.5rem;
+        margin: 0 auto;
+        margin: 5px;
+       
+    }
+    .box div{
+        width: 450px;
+        margin: 50px auto;
+        
+    }
+    .box button {
+        width: 100%;
+        background-color: coral;
+        color:white;
+        height: 50px;
+        border: none;
+        margin-top: 20px;
+    }
+    .box p{
+        color: red;
+        margin-left: 30px;
+    }
+  .box  #box1{
+        padding: 20px;
+        position: absolute;
+        background-color: #FFFFFF;
+        top:0;
+        left:0;
+        right: 0;
+        bottom: 0;
+        display:none;
+        
+        
+        
+    }
+    .box  #box2{
+        padding: 20px;
+        height: 350px;
+        position: absolute;
+        background-color: #FFFFFF;
+        top:0;
+        left:0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        
+        
+        
+    }
+   
+    </style>
+<body>
+   
+    <div class="box">
+            
+        <div id="box1">
+                <h1>注册</h1>
+        <input id="idd" type="text" placeholder="请输入用户名">
+        <p>&nbsp;</p>
+        <input type="text" placeholder="请输入邮箱">
+        <p>&nbsp;</p>
+        <input id="pwdd" type="text" placeholder="请输入密码">
+        <p>&nbsp;</p>
+        <input type="text" placeholder="请再次输入密码">
+        <p>&nbsp;</p>
+        <button id="login1">注册</button>
+        <button id="sign1">登陆</button>
+       
+     </div>
+     <div id="box2">
+            <h1>登陆</h1>
+    <input type="text" placeholder="请输入用户名">
+    <p></p>
+  
+    <input type="text" placeholder="请输入密码">
+    <p></p>
+   
+    <button id="login">注册</button>
+    <button id="sign">登陆</button>
+ </div>
+    </div>
+  <script src="jquery.js"></script>  
+  <script>
+      //登陆界面注册按钮
+      $(function(){
+          
+          var id;
+          var pwd;
+          $("#sign").click(function(){
+              if($("#box2").find("input").eq(0).val()==id&&$("#box2").find("input").eq(1).val()==pwd){
+                  alert("登陆成功")
+              }
+              else{alert("no")}
+              
+          })
+
+          $("#login").click(function(){
+              $("#box1").toggle(1000);
+              $("#box2").toggle(1000);
+            });
+            $("#sign1").click(function(){
+              $("#box1").toggle(1000);
+              $("#box2").toggle(1000);
+            });
+
+          yanze(0,/^[a-zA-Z0-9_-]{4,16}$/,"为空","请输入4到16位",);
+          yanze(1,/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,"为空","邮箱错误",);
+          yanze(2,/^[a-zA-Z]\w{5,17}$/,"为空","密码格式错误");
+          $("#box1").find("input").eq(3).blur(function(){
+          
+            var PWD =$("#box1").find("input").eq(2).val();
+            var PWD1 =$("#box1").find("input").eq(3).val();
+            if(PWD1==""){
+                $("#box1").find("p").eq(3).html("输入为空").css("color","red");
+                
+            } else if(!(PWD1==PWD)){
+                $("#box1").find("p").eq(3).html("两次密码不一致").css("color","red");
+                
+            }else if(PWD1==PWD){
+                $("#box1").find("p").eq(3).html("输入正确").css("color","green");
+               
+                
+            }
+             
+        })
+        $("#login1").click(function(){
+          var idreg=/^[a-zA-Z0-9_-]{4,16}$/;
+          var ereg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+          var pwdreg=/^[a-zA-Z]\w{5,17}$/;
+          if(idreg.test($("#box1").find("input").eq(0).val()) && ereg.test($("#box1").find("input").eq(1).val()) && pwdreg.test($("#box1").find("input").eq(2).val())
+          && $("#box1").find("input").eq(2).val()==$("#box1").find("input").eq(3).val())   {
+            
+            alert("注册成功")  ;
+            id=$("#idd").val();
+              pwd=$("#pwdd").val();
+              $("#box1").find("input").val("")
+          } else{alert("失败")  }
+          
+
+        })
+
+
+function yanze (e,reg,content1,content2){
+    $("#box1").find("input").eq(e).blur(function(){
+            var isEmail = reg;
+            var Email =$("#box1").find("input").eq(e).val();
+            $("#box1").find("p").eq(e).html("");
+            if(Email==""){
+                $("#box1").find("p").eq(e).html(content1).css("color","red");
+                
+            } else if(!(isEmail.test(Email))){
+                $("#box1").find("p").eq(e).html(content2).css("color","red");
+               
+            } else{
+                $("#box1").find("p").eq(e).html("输入正确").css("color","green");
+              
+            }
+
+})
+}
+
+})
+      
+  </script>
+            
+      
+    
+</body>
+</html>
