@@ -116,8 +116,6 @@
             var num =tds.eq(3).html();
            // console.log(name+price)
 
-
-
            var $trs =$("#tb1 tr")
            var amount = 0;
            for(var i=0;i<$trs.length;i++){
@@ -132,10 +130,7 @@
                    return
                }
 
-
-
            }
-
 
            var tr1 = "<tr>"+
             "<td>"+name+"</td>"+
@@ -149,8 +144,6 @@
            $("#tb1").append(tr1);
            total();
 
-
-
         }
         function total() {
             //获取所有的购物车里头的trS
@@ -163,10 +156,6 @@
        $("#total").html(amount);
         }
      
-
-
-
-      
         function subNum(btn){
             var $td =$(btn).next();
             var num =parseInt($td.val())

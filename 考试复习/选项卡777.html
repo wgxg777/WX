@@ -14,10 +14,11 @@
             width:30%;
             height:200px;
             border:2px solid black;
+            margin: 100px auto;
         }
         #box li {
             float:left;
-            width:33%;
+            width:33.3%;
             text-align:center;
             cursor:pointer;
         }
@@ -56,9 +57,9 @@
             $(function () {
             $("#box").find("li").click(function(){
             $("#box").find("li").attr('class','');
-            $("#box").find('div').css('display', 'none');
+            $("#box").find("div").attr('class','')
             $(this).attr('class','nav');
-            $('#box').find('div').eq($(this).index()).css('display','block')
+            $('#box').find('div').eq($(this).index()).attr("class","content")
         });
     })
     </script>
