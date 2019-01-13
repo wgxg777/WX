@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 100%;
+            height: 750px;
+            background-color: rgb(255, 162, 162);
+            position: relative;
+        }
+        #box #login{
+            
+            width: 450px;
+            margin: 50px auto;
+            height: 600px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            display:none;
+    }
+    #box #sign{
+            
+            width: 450px;
+            margin: 50px auto;
+            height: 600px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            display:block;
+    }
+    #box input{
+        width: 80%;
+        height: 60px;
+        margin: 15px 40px 15px 40px ;
+        
+    }
+    #box button{
+        width: 80%;
+        height: 60px;
+        margin: 15px 40px 15px 40px ;
+        background-color:orange;
+        color: #fff;
+        
+    }
+    #box p{
+        color: red;
+        margin-left: 40px;
+    }
+
+       
+ 
+ 
+ 
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="login">
+            <input type="text" placeholder="请输入邮箱">
+            <p>&nbsp;</p>
+            <input type="text" placeholder="请输入密码">
+            <p>&nbsp;</p>
+            <input type="text" placeholder="请再次输入密码">
+            <p>&nbsp;</p>
+            <button>注册</button>
+            <button>登陆</button>
+        </div>
+        <div id="sign">
+                <input type="text" placeholder="请输入邮箱">
+                
+                <input type="text" placeholder="请输入密码">
+                
+                <button>注册</button>
+                <button>登陆</button>
+
+        </div>
+
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            var id;
+            var pwd;
+            //登陆界面注册按钮
+            $("#sign").find("button").eq(0).click(function(){
+                $("#sign").toggle(1000);
+                $("#login").toggle(1000);
+  })
+
+  //   注册界面
+  inputBlur(0,/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,"输入邮箱不能为空","邮箱格式错误");
+  inputBlur(1,/^[a-zA-Z]\w{5,17}$/,"输入密码不能为空","密码格式错误");
+  $("#login").find("input").eq(2).blur(function(){
+      var pwd =$("#login").find("input").eq(1).val();
+      var pwd1=$("#login").find("input").eq(2).val();
+      if(pwd1==""){
+        $("#login").find("p").eq(2).html("请再次输入密码").css("color","red");
+     } else if(!(pwd==pwd1)){
+        $("#login").find("p").eq(2).html("两次密码不一致").css("color","red");
+ } else if(pwd==pwd1){
+    $("#login").find("p").eq(2).html("正确").css("color","green");
+ }
+})
+
+//注册界面注册按钮
+$("#login").find("button").eq(0).click(function(){
+var isEmail=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+var ispwd =/^[a-zA-Z]\w{5,17}$/;
+if(isEmail.test($("#login").find("input").eq(0).val()) && ispwd.test($("#login").find("input").eq(1).val()) &&
+$("#login").find("input").eq(1).val() == $("#login").find("input").eq(2).val()){
+    alert("成功")
+    
+    
+    id=$("#login").find("input").eq(0).val();
+    pwd=$("#login").find("input").eq(1).val();
+    $("#login").find("input").val("");
+    console.log(id)
+    console.log(pwd)
+    $("#sign").toggle(1000);
+    $("#login").toggle(1000);
+} else{ alert("失败")}
+
+
+})
+
+$("#login").find("button").eq(1).click(function(){
+    $("#sign").toggle(1000);
+    $("#login").toggle(1000);
+})
+$("#sign").find("button").eq(1).click(function(){
+   if($("#sign").find("input").eq(0).val()==id && $("#sign").find("input").eq(1).val()==pwd)
+   {
+       alert("登陆成功")
+   }
+   else{ alert("账号或密码错误")
+   }
+})
+
+
+
+
+
+function inputBlur (i,reg,content1,content2){
+    $("#login").find("input").eq(i).blur(function(){
+    
+    var isEmail = reg;
+      var email =$("#login").find("input").eq(i).val();
+      
+      if(email==""){
+        $("#login").find("p").eq(i).html(content1).css("color","red");
+      }  else if(!(isEmail.test(email))){
+        $("#login").find("p").eq(i).html(content2).css("color","red");
+      } else{
+        $("#login").find("p").eq(i).html("正确").css("color","green");
+      }
+
+
+
+  })
+}
+        })
+    </script>
+</body>
+</html>
