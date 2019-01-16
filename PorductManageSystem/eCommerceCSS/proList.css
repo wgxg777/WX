@@ -1,0 +1,143 @@
+﻿/*初始化*/
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    text-decoration: none;
+    color:#000;
+}
+table {
+    width:100%;
+        background-color:cornflowerblue;
+}
+table, tr, th, td {
+    border:1px solid lightgray;
+    border-collapse:collapse;
+    box-sizing:border-box;
+    text-align:center;
+}
+thead {
+    background-color:orange;
+}
+/*顶部*/
+nav {
+    margin-bottom:5px;
+    width: 100%;
+    height: 30px;
+    background-color:cornflowerblue;
+}
+ nav > section {
+        float: right;
+        width: 10%;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+
+        nav > section > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: text-shadow .2s ease-in-out;
+            text-shadow: 0px 0px 0px #fff;
+        }
+
+            nav > section > a:hover {
+                -webkit-transition: text-shadow .2s ease-in-out;
+                text-shadow: 2px 2px 8px #fff;
+            }
+
+.logo {
+    float: left;
+    margin-left: 2.5%;
+    width: 10%;
+    height: 30px;
+    line-height: 30px;
+    text-shadow: 0px 0px 0px #999;
+    font-weight:bold;
+}
+
+    .logo:hover {
+        text-shadow: 2px 2px 15px #999;
+        -webkit-transition: text-shadow 0.3s ease-in-out;
+        cursor:pointer;
+    }
+
+
+/*商品列表*/
+.proList,.shoppingCart,.cash {
+    width:95%;
+    margin-left:2.5%;
+    border:1px solid lightgray;
+    box-sizing:border-box;
+    border-collapse:collapse;
+}
+
+.proList {
+    height:287px;
+    overflow:auto;
+}
+
+
+/*购物车*/
+.shoppingCart {
+    height:200px;
+    margin-top:10px;
+    overflow:auto;
+}
+
+/*结账*/
+.cash {
+        margin-top:10px;
+        margin-bottom:10px;
+        background-color:rosybrown;
+}
+
+
+/*底部*/
+footer {
+    margin-top: 5px;
+    width: 100%;
+    height: 106px;
+    background-color:cornflowerblue;
+}
+
+
+dl {
+    margin-left: 2.5%;
+    float: left;
+    width: 30%;
+    height: 100%;
+    color: #fff;
+}
+
+dt {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    height:40%;
+}
+dl {
+    height:60%;
+}
+
+
+    dt > a, dd > a {
+        text-shadow: 0px 0px 0px #000;
+        -webkit-transition: text-shadow 0.1s ease-in-out;
+    }
+
+        dt > a:hover {
+            color: #fff;
+            text-shadow: 1px 1px 8px #fff;
+            -webkit-transition: text-shadow .1s ease-in-out;
+        }
+
+        dd > a:hover {
+            color: #fff;
+            text-shadow: 2px 2px 8px #fff;
+            -webkit-transition: text-shadow .1s ease-in-out;
+        }
+textarea:focus {
+    box-shadow:2px 2px 8px #fff;
+}

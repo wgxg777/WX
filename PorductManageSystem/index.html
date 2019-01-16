@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="eCommerceCSS/index.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="cover">
+    </div>
+    <div id="loginForm">       
+        <form>
+            <div>姓名：<input type="text" id="userName"/></div>
+            <div>密码：<input type="text" id="pwd"/></div>
+            <div><button type="button" onclick="login()">登录</button></div>        
+        </form>
+    </div>
+    <div id="registeForm">       
+        <form>
+            <div>账号：<input type="text" id="uCount"/></div>
+            <div>密码：<input type="text" id="uPwd"/></div>
+            <div>姓名：<input type="text" id="uName"/></div>
+            <div>年龄：<input type="text" id="uAge"/></div>
+            <div>邮箱：<input type="text" id="uEmail"/></div>
+            <div>手机：<input type="text" id="uPhone"/></div>
+            <div>地址：<input type="text" id="uAddress"/></div>
+            <div><button type="button" onclick="login()">注册</button></div>        
+        </form>
+    </div>
+    <header>
+        <nav>
+            <section class="logo"><a href="index.html">logo</a></section>
+            <section><a href="#" onclick="loginButton()">登录</a></section>
+            <section><a href="#" onclick="registeButton()">注册</a></section>
+        </nav>
+        <section>
+            <ul  style="overflow:hidden;">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">促销商品</a></li>
+                <li><a href="proList.html">商品列表</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </section>
+    </header>
+    <article class="sliders">
+        <section class="slider s1">1</section>
+        <section class="slider s2">2</section>
+        <section class="slider s3">3</section>
+    </article>
+    <article class="proSections">
+        <section class="proSection">大类</section>
+        <section class="proSection">大类</section>
+        <section class="proSection">大类</section>
+        <section style="clear:both;"></section>
+    </article>
+    <footer>
+        <dl>
+            <dt><a href="#">关于我们</a></dt>
+            <dd><a href="#">公司简介</a></dd>
+            <dd><a href="#">团队简介</a></dd>
+        </dl>
+        <dl>
+            <dt>联系我们</dt>
+            <dd>地址：重庆市沙坪坝大学城中路重庆商务学院</dd>
+            <dd>电话：023-65328714</dd>
+        </dl>
+        <dl>
+            <dt>留言：</dt>
+            <dd><textarea placeholder="请留言"></textarea></dd>
+        </dl>
+    </footer>
+    <script src="eCommerceJS/index.js"></script>
+</body>
+</html>
